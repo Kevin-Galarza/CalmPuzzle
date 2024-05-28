@@ -8,14 +8,74 @@
 
 /* Begin PBXBuildFile section */
 		180192C22BF6FABD002E6893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192C12BF6FABD002E6893 /* AppDelegate.swift */; };
-		180192C42BF6FABD002E6893 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192C32BF6FABD002E6893 /* SceneDelegate.swift */; };
 		180192C62BF6FABD002E6893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192C52BF6FABD002E6893 /* ViewController.swift */; };
-		180192C92BF6FABD002E6893 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180192C72BF6FABD002E6893 /* Main.storyboard */; };
 		180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180192CA2BF6FABE002E6893 /* Assets.xcassets */; };
 		180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */; };
 		180192D92BF6FABF002E6893 /* CirclePuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192D82BF6FABF002E6893 /* CirclePuzzleTests.swift */; };
 		180192E32BF6FABF002E6893 /* CirclePuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */; };
 		180192E52BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */; };
+		185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */; };
+		185E3FD82BFFBEB300E5E398 /* GameSessionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */; };
+		185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */; };
+		185E3FDC2BFFC04700E5E398 /* GameSessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */; };
+		185E3FDE2C00EF2B00E5E398 /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDD2C00EF2B00E5E398 /* TileCell.swift */; };
+		186363952BFBA16100A330AF /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363942BFBA16100A330AF /* AppContainer.swift */; };
+		186363972BFCDCC600A330AF /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363962BFCDCC600A330AF /* Puzzle.swift */; };
+		1863639A2BFCDF7800A330AF /* PuzzleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363992BFCDF7800A330AF /* PuzzleCategory.swift */; };
+		1863639D2BFCDFD600A330AF /* PuzzleRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863639C2BFCDFD600A330AF /* PuzzleRepository.swift */; };
+		1863639F2BFCDFFC00A330AF /* PuzzleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863639E2BFCDFFC00A330AF /* PuzzleDataStore.swift */; };
+		186363A12BFCE01500A330AF /* MockPuzzleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363A02BFCE01500A330AF /* MockPuzzleDataStore.swift */; };
+		186363A42BFCEB8D00A330AF /* UserProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363A32BFCEB8D00A330AF /* UserProfileRepository.swift */; };
+		186363A62BFCEB9F00A330AF /* UserProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363A52BFCEB9F00A330AF /* UserProfileDataStore.swift */; };
+		186363A82BFCEBA900A330AF /* MockUserProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363A72BFCEBA900A330AF /* MockUserProfileDataStore.swift */; };
+		186363AA2BFCEC3300A330AF /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363A92BFCEC3300A330AF /* UserProfile.swift */; };
+		186363AC2BFCF51B00A330AF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363AB2BFCF51B00A330AF /* MainViewModel.swift */; };
+		186363AE2BFD070800A330AF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363AD2BFD070800A330AF /* MainViewController.swift */; };
+		186363B02BFD0A5D00A330AF /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363AF2BFD0A5D00A330AF /* LaunchViewController.swift */; };
+		186363B22BFD0A6600A330AF /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363B12BFD0A6600A330AF /* LaunchViewModel.swift */; };
+		186363B42BFD0AD600A330AF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363B32BFD0AD600A330AF /* OnboardingViewController.swift */; };
+		186363B62BFD0B0500A330AF /* OnboardingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363B52BFD0B0500A330AF /* OnboardingContainer.swift */; };
+		186363B82BFD0D8B00A330AF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363B72BFD0D8B00A330AF /* OnboardingViewModel.swift */; };
+		186363BC2BFD133B00A330AF /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363BB2BFD133B00A330AF /* BaseViewModel.swift */; };
+		186363BE2BFD147800A330AF /* SignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363BD2BFD147800A330AF /* SignedInResponder.swift */; };
+		186363C02BFD148200A330AF /* NotSignedInResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363BF2BFD148200A330AF /* NotSignedInResponder.swift */; };
+		186363C22BFD165700A330AF /* SignedInContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363C12BFD165700A330AF /* SignedInContainer.swift */; };
+		186363C42BFD449500A330AF /* LaunchRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363C32BFD449500A330AF /* LaunchRootView.swift */; };
+		186363C72BFD44B500A330AF /* OnboardingRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363C62BFD44B400A330AF /* OnboardingRootView.swift */; };
+		186363CD2BFD45E500A330AF /* NiblessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363CC2BFD45E500A330AF /* NiblessView.swift */; };
+		186363CF2BFD45F000A330AF /* NiblessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363CE2BFD45F000A330AF /* NiblessViewController.swift */; };
+		186363D12BFD475500A330AF /* UIViewController+ErrorPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363D02BFD475500A330AF /* UIViewController+ErrorPresentation.swift */; };
+		186363D32BFD481200A330AF /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363D22BFD481200A330AF /* ErrorMessage.swift */; };
+		186363D52BFD481C00A330AF /* ErrorPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363D42BFD481C00A330AF /* ErrorPresentation.swift */; };
+		186363D72BFD48A300A330AF /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363D62BFD48A300A330AF /* Secret.swift */; };
+		186363D92BFD48C900A330AF /* PuzzleID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363D82BFD48C900A330AF /* PuzzleID.swift */; };
+		186363DB2BFD498700A330AF /* ViewControllerContainment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363DA2BFD498700A330AF /* ViewControllerContainment.swift */; };
+		186363DD2BFD49CB00A330AF /* ErrorMessagePresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363DC2BFD49CB00A330AF /* ErrorMessagePresentation.swift */; };
+		186363E02BFD4B5D00A330AF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363DF2BFD4B5D00A330AF /* Color.swift */; };
+		186363E22BFD4B6500A330AF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E12BFD4B6500A330AF /* UIColor+Hex.swift */; };
+		186363E42BFD539400A330AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E32BFD539400A330AF /* MainView.swift */; };
+		186363E62BFD5A6A00A330AF /* RealmUserProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E52BFD5A6900A330AF /* RealmUserProfileDataStore.swift */; };
+		186363E92BFE395200A330AF /* NiblessTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E82BFE395200A330AF /* NiblessTabBarController.swift */; };
+		186363F12BFE3C8F00A330AF /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F02BFE3C8F00A330AF /* BrowseViewController.swift */; };
+		186363F32BFE3C9700A330AF /* BrowseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F22BFE3C9700A330AF /* BrowseRootView.swift */; };
+		186363F52BFE3CA600A330AF /* BrowseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F42BFE3CA600A330AF /* BrowseViewModel.swift */; };
+		186363F72BFE3CB700A330AF /* DailyPuzzleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F62BFE3CB700A330AF /* DailyPuzzleViewController.swift */; };
+		186363F92BFE3CC300A330AF /* DailyPuzzleRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F82BFE3CC300A330AF /* DailyPuzzleRootView.swift */; };
+		186363FB2BFE3CCC00A330AF /* DailyPuzzleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363FA2BFE3CCC00A330AF /* DailyPuzzleViewModel.swift */; };
+		186363FD2BFE3CD700A330AF /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363FC2BFE3CD700A330AF /* ShopViewController.swift */; };
+		186363FF2BFE3CDF00A330AF /* ShopRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363FE2BFE3CDF00A330AF /* ShopRootView.swift */; };
+		186364012BFE3CE600A330AF /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364002BFE3CE500A330AF /* ShopViewModel.swift */; };
+		186364032BFE3CEE00A330AF /* MyPuzzlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364022BFE3CEE00A330AF /* MyPuzzlesViewController.swift */; };
+		186364052BFE3CF800A330AF /* MyPuzzlesRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364042BFE3CF800A330AF /* MyPuzzlesRootView.swift */; };
+		186364072BFE3CFF00A330AF /* MyPuzzlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364062BFE3CFF00A330AF /* MyPuzzlesViewModel.swift */; };
+		186364092BFE3D0800A330AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364082BFE3D0800A330AF /* SettingsViewController.swift */; };
+		1863640B2BFE3D1200A330AF /* SettingsRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863640A2BFE3D1200A330AF /* SettingsRootView.swift */; };
+		1863640D2BFE3D2A00A330AF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863640C2BFE3D2A00A330AF /* SettingsViewModel.swift */; };
+		186364112BFE4D5900A330AF /* SignedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364102BFE4D5900A330AF /* SignedInViewController.swift */; };
+		186364132BFE4E5400A330AF /* BaseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364122BFE4E5400A330AF /* BaseRootView.swift */; };
+		186364172BFF9A6B00A330AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364162BFF9A6B00A330AF /* CategoryCell.swift */; };
+		186364192BFFB41A00A330AF /* PuzzleTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364182BFFB41A00A330AF /* PuzzleTileCell.swift */; };
+		1863641B2BFFB78E00A330AF /* merchant.png in Resources */ = {isa = PBXBuildFile; fileRef = 1863641A2BFFB78D00A330AF /* merchant.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +98,7 @@
 /* Begin PBXFileReference section */
 		180192BE2BF6FABD002E6893 /* CirclePuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirclePuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180192C12BF6FABD002E6893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		180192C32BF6FABD002E6893 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		180192C52BF6FABD002E6893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		180192C82BF6FABD002E6893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		180192CA2BF6FABE002E6893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180192CD2BF6FABE002E6893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180192CF2BF6FABE002E6893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +107,68 @@
 		180192DE2BF6FABF002E6893 /* CirclePuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclePuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleUITests.swift; sourceTree = "<group>"; };
 		180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
+		185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionRootView.swift; sourceTree = "<group>"; };
+		185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewController.swift; sourceTree = "<group>"; };
+		185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionContainer.swift; sourceTree = "<group>"; };
+		185E3FDD2C00EF2B00E5E398 /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
+		186363942BFBA16100A330AF /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		186363962BFCDCC600A330AF /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
+		186363992BFCDF7800A330AF /* PuzzleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCategory.swift; sourceTree = "<group>"; };
+		1863639C2BFCDFD600A330AF /* PuzzleRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleRepository.swift; sourceTree = "<group>"; };
+		1863639E2BFCDFFC00A330AF /* PuzzleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleDataStore.swift; sourceTree = "<group>"; };
+		186363A02BFCE01500A330AF /* MockPuzzleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPuzzleDataStore.swift; sourceTree = "<group>"; };
+		186363A32BFCEB8D00A330AF /* UserProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileRepository.swift; sourceTree = "<group>"; };
+		186363A52BFCEB9F00A330AF /* UserProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataStore.swift; sourceTree = "<group>"; };
+		186363A72BFCEBA900A330AF /* MockUserProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserProfileDataStore.swift; sourceTree = "<group>"; };
+		186363A92BFCEC3300A330AF /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		186363AB2BFCF51B00A330AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		186363AD2BFD070800A330AF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		186363AF2BFD0A5D00A330AF /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		186363B12BFD0A6600A330AF /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		186363B32BFD0AD600A330AF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		186363B52BFD0B0500A330AF /* OnboardingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainer.swift; sourceTree = "<group>"; };
+		186363B72BFD0D8B00A330AF /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		186363BB2BFD133B00A330AF /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		186363BD2BFD147800A330AF /* SignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInResponder.swift; sourceTree = "<group>"; };
+		186363BF2BFD148200A330AF /* NotSignedInResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSignedInResponder.swift; sourceTree = "<group>"; };
+		186363C12BFD165700A330AF /* SignedInContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInContainer.swift; sourceTree = "<group>"; };
+		186363C32BFD449500A330AF /* LaunchRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRootView.swift; sourceTree = "<group>"; };
+		186363C62BFD44B400A330AF /* OnboardingRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRootView.swift; sourceTree = "<group>"; };
+		186363CC2BFD45E500A330AF /* NiblessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessView.swift; sourceTree = "<group>"; };
+		186363CE2BFD45F000A330AF /* NiblessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessViewController.swift; sourceTree = "<group>"; };
+		186363D02BFD475500A330AF /* UIViewController+ErrorPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ErrorPresentation.swift"; sourceTree = "<group>"; };
+		186363D22BFD481200A330AF /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		186363D42BFD481C00A330AF /* ErrorPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentation.swift; sourceTree = "<group>"; };
+		186363D62BFD48A300A330AF /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		186363D82BFD48C900A330AF /* PuzzleID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleID.swift; sourceTree = "<group>"; };
+		186363DA2BFD498700A330AF /* ViewControllerContainment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerContainment.swift; sourceTree = "<group>"; };
+		186363DC2BFD49CB00A330AF /* ErrorMessagePresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessagePresentation.swift; sourceTree = "<group>"; };
+		186363DF2BFD4B5D00A330AF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		186363E12BFD4B6500A330AF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		186363E32BFD539400A330AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		186363E52BFD5A6900A330AF /* RealmUserProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUserProfileDataStore.swift; sourceTree = "<group>"; };
+		186363E82BFE395200A330AF /* NiblessTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessTabBarController.swift; sourceTree = "<group>"; };
+		186363F02BFE3C8F00A330AF /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		186363F22BFE3C9700A330AF /* BrowseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseRootView.swift; sourceTree = "<group>"; };
+		186363F42BFE3CA600A330AF /* BrowseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewModel.swift; sourceTree = "<group>"; };
+		186363F62BFE3CB700A330AF /* DailyPuzzleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzleViewController.swift; sourceTree = "<group>"; };
+		186363F82BFE3CC300A330AF /* DailyPuzzleRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzleRootView.swift; sourceTree = "<group>"; };
+		186363FA2BFE3CCC00A330AF /* DailyPuzzleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPuzzleViewModel.swift; sourceTree = "<group>"; };
+		186363FC2BFE3CD700A330AF /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		186363FE2BFE3CDF00A330AF /* ShopRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopRootView.swift; sourceTree = "<group>"; };
+		186364002BFE3CE500A330AF /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		186364022BFE3CEE00A330AF /* MyPuzzlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPuzzlesViewController.swift; sourceTree = "<group>"; };
+		186364042BFE3CF800A330AF /* MyPuzzlesRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPuzzlesRootView.swift; sourceTree = "<group>"; };
+		186364062BFE3CFF00A330AF /* MyPuzzlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPuzzlesViewModel.swift; sourceTree = "<group>"; };
+		186364082BFE3D0800A330AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1863640A2BFE3D1200A330AF /* SettingsRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRootView.swift; sourceTree = "<group>"; };
+		1863640C2BFE3D2A00A330AF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		186364102BFE4D5900A330AF /* SignedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInViewController.swift; sourceTree = "<group>"; };
+		186364122BFE4E5400A330AF /* BaseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRootView.swift; sourceTree = "<group>"; };
+		186364162BFF9A6B00A330AF /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		186364182BFFB41A00A330AF /* PuzzleTileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTileCell.swift; sourceTree = "<group>"; };
+		1863641A2BFFB78D00A330AF /* merchant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = merchant.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +219,15 @@
 		180192C02BF6FABD002E6893 /* CirclePuzzle */ = {
 			isa = PBXGroup;
 			children = (
-				180192C12BF6FABD002E6893 /* AppDelegate.swift */,
-				180192C32BF6FABD002E6893 /* SceneDelegate.swift */,
 				180192C52BF6FABD002E6893 /* ViewController.swift */,
-				180192C72BF6FABD002E6893 /* Main.storyboard */,
+				180192C12BF6FABD002E6893 /* AppDelegate.swift */,
+				186363942BFBA16100A330AF /* AppContainer.swift */,
+				186363AB2BFCF51B00A330AF /* MainViewModel.swift */,
+				186363E32BFD539400A330AF /* MainView.swift */,
+				186363AD2BFD070800A330AF /* MainViewController.swift */,
+				186363E72BFE2DD800A330AF /* UIKit */,
+				186363CB2BFD454C00A330AF /* UI */,
+				186363CA2BFD452300A330AF /* Data */,
 				180192CA2BF6FABE002E6893 /* Assets.xcassets */,
 				180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */,
 				180192CF2BF6FABE002E6893 /* Info.plist */,
@@ -125,6 +250,205 @@
 				180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */,
 			);
 			path = CirclePuzzleUITests;
+			sourceTree = "<group>";
+		};
+		186363982BFCDF6500A330AF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				186363962BFCDCC600A330AF /* Puzzle.swift */,
+				186363992BFCDF7800A330AF /* PuzzleCategory.swift */,
+				186363A92BFCEC3300A330AF /* UserProfile.swift */,
+				186363D22BFD481200A330AF /* ErrorMessage.swift */,
+				186363D42BFD481C00A330AF /* ErrorPresentation.swift */,
+				186363D62BFD48A300A330AF /* Secret.swift */,
+				186363D82BFD48C900A330AF /* PuzzleID.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1863639B2BFCDF8C00A330AF /* PuzzleService */ = {
+			isa = PBXGroup;
+			children = (
+				1863639C2BFCDFD600A330AF /* PuzzleRepository.swift */,
+				1863639E2BFCDFFC00A330AF /* PuzzleDataStore.swift */,
+				186363A02BFCE01500A330AF /* MockPuzzleDataStore.swift */,
+			);
+			path = PuzzleService;
+			sourceTree = "<group>";
+		};
+		186363A22BFCEB6D00A330AF /* UserProfileService */ = {
+			isa = PBXGroup;
+			children = (
+				186363A32BFCEB8D00A330AF /* UserProfileRepository.swift */,
+				186363A52BFCEB9F00A330AF /* UserProfileDataStore.swift */,
+				186363A72BFCEBA900A330AF /* MockUserProfileDataStore.swift */,
+				186363E52BFD5A6900A330AF /* RealmUserProfileDataStore.swift */,
+			);
+			path = UserProfileService;
+			sourceTree = "<group>";
+		};
+		186363C52BFD449F00A330AF /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				186363AF2BFD0A5D00A330AF /* LaunchViewController.swift */,
+				186363C32BFD449500A330AF /* LaunchRootView.swift */,
+				186363B12BFD0A6600A330AF /* LaunchViewModel.swift */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		186363C82BFD44BA00A330AF /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				186363B52BFD0B0500A330AF /* OnboardingContainer.swift */,
+				186363B32BFD0AD600A330AF /* OnboardingViewController.swift */,
+				186363C62BFD44B400A330AF /* OnboardingRootView.swift */,
+				186363B72BFD0D8B00A330AF /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		186363C92BFD44D600A330AF /* SignedIn */ = {
+			isa = PBXGroup;
+			children = (
+				186363C12BFD165700A330AF /* SignedInContainer.swift */,
+				186364102BFE4D5900A330AF /* SignedInViewController.swift */,
+				186363BD2BFD147800A330AF /* SignedInResponder.swift */,
+				186363BF2BFD148200A330AF /* NotSignedInResponder.swift */,
+			);
+			path = SignedIn;
+			sourceTree = "<group>";
+		};
+		186363CA2BFD452300A330AF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				186364152BFF8C5300A330AF /* ImageStore */,
+				186363A22BFCEB6D00A330AF /* UserProfileService */,
+				1863639B2BFCDF8C00A330AF /* PuzzleService */,
+				186363982BFCDF6500A330AF /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		186363CB2BFD454C00A330AF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				186363DE2BFD4A9900A330AF /* Style */,
+				186363C52BFD449F00A330AF /* Launch */,
+				186363C82BFD44BA00A330AF /* Onboarding */,
+				186363C92BFD44D600A330AF /* SignedIn */,
+				186364142BFE607100A330AF /* Tabs */,
+				186363ED2BFE3BFC00A330AF /* Settings */,
+				186363EF2BFE3C2C00A330AF /* GameSession */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		186363DE2BFD4A9900A330AF /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				186363DF2BFD4B5D00A330AF /* Color.swift */,
+				186363E12BFD4B6500A330AF /* UIColor+Hex.swift */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
+		186363E72BFE2DD800A330AF /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				186363CC2BFD45E500A330AF /* NiblessView.swift */,
+				186363CE2BFD45F000A330AF /* NiblessViewController.swift */,
+				186363E82BFE395200A330AF /* NiblessTabBarController.swift */,
+				186363DA2BFD498700A330AF /* ViewControllerContainment.swift */,
+				186363D02BFD475500A330AF /* UIViewController+ErrorPresentation.swift */,
+				186363DC2BFD49CB00A330AF /* ErrorMessagePresentation.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		186363EA2BFE3BB400A330AF /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				186363F02BFE3C8F00A330AF /* BrowseViewController.swift */,
+				186363F22BFE3C9700A330AF /* BrowseRootView.swift */,
+				186363F42BFE3CA600A330AF /* BrowseViewModel.swift */,
+				186364162BFF9A6B00A330AF /* CategoryCell.swift */,
+				186364182BFFB41A00A330AF /* PuzzleTileCell.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
+		186363EB2BFE3BBD00A330AF /* DailyPuzzle */ = {
+			isa = PBXGroup;
+			children = (
+				186363F62BFE3CB700A330AF /* DailyPuzzleViewController.swift */,
+				186363F82BFE3CC300A330AF /* DailyPuzzleRootView.swift */,
+				186363FA2BFE3CCC00A330AF /* DailyPuzzleViewModel.swift */,
+			);
+			path = DailyPuzzle;
+			sourceTree = "<group>";
+		};
+		186363EC2BFE3BF100A330AF /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				186363FC2BFE3CD700A330AF /* ShopViewController.swift */,
+				186363FE2BFE3CDF00A330AF /* ShopRootView.swift */,
+				186364002BFE3CE500A330AF /* ShopViewModel.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		186363ED2BFE3BFC00A330AF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				186364082BFE3D0800A330AF /* SettingsViewController.swift */,
+				1863640A2BFE3D1200A330AF /* SettingsRootView.swift */,
+				1863640C2BFE3D2A00A330AF /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		186363EE2BFE3C1200A330AF /* MyPuzzles */ = {
+			isa = PBXGroup;
+			children = (
+				186364022BFE3CEE00A330AF /* MyPuzzlesViewController.swift */,
+				186364042BFE3CF800A330AF /* MyPuzzlesRootView.swift */,
+				186364062BFE3CFF00A330AF /* MyPuzzlesViewModel.swift */,
+			);
+			path = MyPuzzles;
+			sourceTree = "<group>";
+		};
+		186363EF2BFE3C2C00A330AF /* GameSession */ = {
+			isa = PBXGroup;
+			children = (
+				185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */,
+				185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */,
+				185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */,
+				185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */,
+				185E3FDD2C00EF2B00E5E398 /* TileCell.swift */,
+			);
+			path = GameSession;
+			sourceTree = "<group>";
+		};
+		186364142BFE607100A330AF /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				186364122BFE4E5400A330AF /* BaseRootView.swift */,
+				186363BB2BFD133B00A330AF /* BaseViewModel.swift */,
+				186363EA2BFE3BB400A330AF /* Browse */,
+				186363EB2BFE3BBD00A330AF /* DailyPuzzle */,
+				186363EC2BFE3BF100A330AF /* Shop */,
+				186363EE2BFE3C1200A330AF /* MyPuzzles */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		186364152BFF8C5300A330AF /* ImageStore */ = {
+			isa = PBXGroup;
+			children = (
+				1863641A2BFFB78D00A330AF /* merchant.png */,
+			);
+			path = ImageStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +555,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1863641B2BFFB78E00A330AF /* merchant.png in Resources */,
 				180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */,
 				180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */,
-				180192C92BF6FABD002E6893 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +582,69 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186363FD2BFE3CD700A330AF /* ShopViewController.swift in Sources */,
+				186363F32BFE3C9700A330AF /* BrowseRootView.swift in Sources */,
+				186363E92BFE395200A330AF /* NiblessTabBarController.swift in Sources */,
+				186363972BFCDCC600A330AF /* Puzzle.swift in Sources */,
+				186364132BFE4E5400A330AF /* BaseRootView.swift in Sources */,
+				186363E42BFD539400A330AF /* MainView.swift in Sources */,
+				186363E62BFD5A6A00A330AF /* RealmUserProfileDataStore.swift in Sources */,
+				186363C22BFD165700A330AF /* SignedInContainer.swift in Sources */,
+				185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */,
+				186363B62BFD0B0500A330AF /* OnboardingContainer.swift in Sources */,
+				186363DD2BFD49CB00A330AF /* ErrorMessagePresentation.swift in Sources */,
+				186363D72BFD48A300A330AF /* Secret.swift in Sources */,
+				186363D32BFD481200A330AF /* ErrorMessage.swift in Sources */,
+				186363F92BFE3CC300A330AF /* DailyPuzzleRootView.swift in Sources */,
+				1863640B2BFE3D1200A330AF /* SettingsRootView.swift in Sources */,
+				186364012BFE3CE600A330AF /* ShopViewModel.swift in Sources */,
+				186364112BFE4D5900A330AF /* SignedInViewController.swift in Sources */,
+				1863639F2BFCDFFC00A330AF /* PuzzleDataStore.swift in Sources */,
+				185E3FD82BFFBEB300E5E398 /* GameSessionRootView.swift in Sources */,
+				186363BE2BFD147800A330AF /* SignedInResponder.swift in Sources */,
+				186363FB2BFE3CCC00A330AF /* DailyPuzzleViewModel.swift in Sources */,
+				186363DB2BFD498700A330AF /* ViewControllerContainment.swift in Sources */,
+				186364172BFF9A6B00A330AF /* CategoryCell.swift in Sources */,
+				186364032BFE3CEE00A330AF /* MyPuzzlesViewController.swift in Sources */,
+				186363F52BFE3CA600A330AF /* BrowseViewModel.swift in Sources */,
+				186363E02BFD4B5D00A330AF /* Color.swift in Sources */,
+				186363D92BFD48C900A330AF /* PuzzleID.swift in Sources */,
+				186363A82BFCEBA900A330AF /* MockUserProfileDataStore.swift in Sources */,
+				185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */,
+				185E3FDE2C00EF2B00E5E398 /* TileCell.swift in Sources */,
 				180192C62BF6FABD002E6893 /* ViewController.swift in Sources */,
+				186363FF2BFE3CDF00A330AF /* ShopRootView.swift in Sources */,
+				186363F12BFE3C8F00A330AF /* BrowseViewController.swift in Sources */,
+				186364072BFE3CFF00A330AF /* MyPuzzlesViewModel.swift in Sources */,
+				186363952BFBA16100A330AF /* AppContainer.swift in Sources */,
+				186363CF2BFD45F000A330AF /* NiblessViewController.swift in Sources */,
+				1863640D2BFE3D2A00A330AF /* SettingsViewModel.swift in Sources */,
+				1863639A2BFCDF7800A330AF /* PuzzleCategory.swift in Sources */,
+				1863639D2BFCDFD600A330AF /* PuzzleRepository.swift in Sources */,
+				186363BC2BFD133B00A330AF /* BaseViewModel.swift in Sources */,
+				186363B42BFD0AD600A330AF /* OnboardingViewController.swift in Sources */,
+				186363B22BFD0A6600A330AF /* LaunchViewModel.swift in Sources */,
+				186363AC2BFCF51B00A330AF /* MainViewModel.swift in Sources */,
+				186364192BFFB41A00A330AF /* PuzzleTileCell.swift in Sources */,
+				186363A42BFCEB8D00A330AF /* UserProfileRepository.swift in Sources */,
+				186363AE2BFD070800A330AF /* MainViewController.swift in Sources */,
+				186364052BFE3CF800A330AF /* MyPuzzlesRootView.swift in Sources */,
+				186363C42BFD449500A330AF /* LaunchRootView.swift in Sources */,
 				180192C22BF6FABD002E6893 /* AppDelegate.swift in Sources */,
-				180192C42BF6FABD002E6893 /* SceneDelegate.swift in Sources */,
+				186363CD2BFD45E500A330AF /* NiblessView.swift in Sources */,
+				186363D12BFD475500A330AF /* UIViewController+ErrorPresentation.swift in Sources */,
+				186363C02BFD148200A330AF /* NotSignedInResponder.swift in Sources */,
+				186364092BFE3D0800A330AF /* SettingsViewController.swift in Sources */,
+				185E3FDC2BFFC04700E5E398 /* GameSessionContainer.swift in Sources */,
+				186363D52BFD481C00A330AF /* ErrorPresentation.swift in Sources */,
+				186363A62BFCEB9F00A330AF /* UserProfileDataStore.swift in Sources */,
+				186363B82BFD0D8B00A330AF /* OnboardingViewModel.swift in Sources */,
+				186363A12BFCE01500A330AF /* MockPuzzleDataStore.swift in Sources */,
+				186363E22BFD4B6500A330AF /* UIColor+Hex.swift in Sources */,
+				186363C72BFD44B500A330AF /* OnboardingRootView.swift in Sources */,
+				186363AA2BFCEC3300A330AF /* UserProfile.swift in Sources */,
+				186363F72BFE3CB700A330AF /* DailyPuzzleViewController.swift in Sources */,
+				186363B02BFD0A5D00A330AF /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +681,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		180192C72BF6FABD002E6893 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				180192C82BF6FABD002E6893 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -368,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -425,7 +801,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -445,11 +821,12 @@
 				DEVELOPMENT_TEAM = E9P6GGP6YR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CirclePuzzle/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,11 +850,12 @@
 				DEVELOPMENT_TEAM = E9P6GGP6YR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CirclePuzzle/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
