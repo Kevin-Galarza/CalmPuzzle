@@ -9,7 +9,16 @@ import UIKit
 import Combine
 
 class GameSessionRootView: UIView {
+    
+    let backButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Back", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
+    }()
+    
     var viewModel: GameSessionViewModel
+    
     private var collectionView: UICollectionView!
     private var subscriptions = Set<AnyCancellable>()
 
@@ -17,6 +26,8 @@ class GameSessionRootView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
         applyStyle()
+        constructHierarchy()
+        applyConstraints()
         setupCollectionView()
         bindViewModel()
     }
@@ -27,6 +38,25 @@ class GameSessionRootView: UIView {
     
     private func applyStyle() {
         backgroundColor = .gray
+    }
+    
+    private func constructHierarchy() {
+        backButton.addTarget(self, action: #selector(handleBackButtonTap), for: .touchUpInside)
+        addSubview(backButton)
+    }
+    
+    @objc private func handleBackButtonTap() {
+        viewModel.dismiss()
+    }
+    
+    private func applyConstraints() {
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            backButton.widthAnchor.constraint(equalToConstant: 88),
+            backButton.heightAnchor.constraint(equalToConstant: 44),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            backButton.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16)
+        ])
     }
 
     private func setupCollectionView() {

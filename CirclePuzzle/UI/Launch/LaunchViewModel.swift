@@ -68,8 +68,8 @@ class LaunchViewModel {
         switch userProfile {
         case .none:
             notSignedInResponder.notSignedIn()
-        case .some(let userSession):
-            signedInResponder.signedIn(to: userSession)
+        case .some:
+            signedInResponder.signedIn()
         }
     }
 }

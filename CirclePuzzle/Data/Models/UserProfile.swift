@@ -31,7 +31,7 @@ struct UserProfile: Codable {
     }
 
     struct AppProgress: Equatable, Codable {
-        let completedPuzzles: [PuzzleID]?
+        let completedPuzzles: Set<PuzzleID>?
         let ongoingPuzzles: [PuzzleID : [Tile]]?
     }
 

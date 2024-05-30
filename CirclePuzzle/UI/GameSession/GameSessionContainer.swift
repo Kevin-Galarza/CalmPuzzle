@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class GameSessionContainer {
     
@@ -13,19 +14,18 @@ class GameSessionContainer {
     let puzzleRepository: PuzzleRepository
     
     let puzzle: Puzzle
-    let userProfile: UserProfile
+    let userProfilePublisher: AnyPublisher<UserProfile?, Error>
     
-    init(puzzle: Puzzle, userProfile: UserProfile, signedInContainer: SignedInContainer) {
+    init(puzzle: Puzzle, signedInContainer: SignedInContainer) {
+        self.userProfilePublisher = signedInContainer.userProfilePublisher
         self.userProfileRepository = signedInContainer.userProfileRepository
         self.puzzleRepository = signedInContainer.puzzleRepository
         
         self.puzzle = puzzle
-        self.userProfile = userProfile
     }
     
     func makeGameSessionViewModel() -> GameSessionViewModel {
-        let progress = userProfile.appProgress.ongoingPuzzles?[puzzle.id]
-        return GameSessionViewModel(userProfileRepository: userProfileRepository, puzzleRepository: puzzleRepository, puzzle: puzzle, progress: progress)
+        return GameSessionViewModel(userProfileRepository: userProfileRepository, puzzleRepository: puzzleRepository, puzzle: puzzle, userProfilePublisher: self.userProfilePublisher)
     }
     
     func makeGameSessionViewController() -> GameSessionViewController {

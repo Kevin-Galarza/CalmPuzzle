@@ -5,45 +5,16 @@
 //  Created by Kevin Galarza on 5/23/24.
 //
 
-import Foundation
-import Combine
-
-//class GameSessionViewModel {
-//    
-//    let userProfileRepository: UserProfileRepository
-//    let puzzleRepository: PuzzleRepository
-//    
-//    let puzzle: Puzzle
-//    let progress: [UserProfile.Tile]?
-//    
-//    init(userProfileRepository: UserProfileRepository, puzzleRepository: PuzzleRepository, puzzle: Puzzle, progress: [UserProfile.Tile]?) {
-//        self.userProfileRepository = userProfileRepository
-//        self.puzzleRepository = puzzleRepository
-//        self.puzzle = puzzle
-//        self.progress = progress
-//    }
-//    
-//    
-//}
-
 import UIKit
 import Combine
 
-struct Tile {
-    let id: Int
-    var image: UIImage
-    var currentIndex: Int
-    let correctIndex: Int
-
-    var isCorrectPosition: Bool {
-        return currentIndex == correctIndex
-    }
-}
-
 class GameSessionViewModel {
     
+    let userProfilePublisher: AnyPublisher<UserProfile?, Error>
     let userProfileRepository: UserProfileRepository
     let puzzleRepository: PuzzleRepository
+    
+    let puzzleID: PuzzleID
     
     private(set) var gridSize: Int = 5
     
@@ -51,13 +22,58 @@ class GameSessionViewModel {
     @Published var isGameCompleted = false
     @Published var selectedTileIndex: Int?
     
-    var swapPublisher = PassthroughSubject<(Int, Int), Never>()
+    let swapPublisher = PassthroughSubject<(Int, Int), Never>()
+    let dismissPublisher = PassthroughSubject<Void, Never>()
     
-    init(userProfileRepository: UserProfileRepository, puzzleRepository: PuzzleRepository, puzzle: Puzzle, progress: [UserProfile.Tile]?) {
+    private var subscriptions = Set<AnyCancellable>()
+    
+    init(userProfileRepository: UserProfileRepository, puzzleRepository: PuzzleRepository, puzzle: Puzzle, userProfilePublisher: AnyPublisher<UserProfile?, Error>) {
+        self.userProfilePublisher = userProfilePublisher
         self.userProfileRepository = userProfileRepository
         self.puzzleRepository = puzzleRepository
+        self.puzzleID = puzzle.id
+        
         setGridSize(from: puzzle.difficulty)
-        initializeTiles(from: puzzle, with: progress)
+        
+        userProfilePublisher
+            .compactMap { $0 }  // Ensure the UserProfile is not nil
+            .receive(on: DispatchQueue.main)
+            .first()
+            .sink(receiveCompletion: { completion in
+
+            }, receiveValue: { [weak self] userProfile in
+                let progress = userProfile.appProgress.ongoingPuzzles?[puzzle.id]
+                self?.initializeTiles(from: puzzle, with: progress)
+                print(userProfile)
+            })
+            .store(in: &subscriptions)
+    }
+    
+    func selectTile(at index: Int) {
+        guard index < tiles.count else { return }
+        if let selectedIndex = selectedTileIndex {
+            if selectedIndex == index {
+                selectedTileIndex = nil
+            } else {
+                swapTiles(index1: selectedIndex, index2: index)
+                selectedTileIndex = nil
+            }
+        } else {
+            selectedTileIndex = index
+        }
+    }
+    
+    func swapTiles(index1: Int, index2: Int) {
+        guard index1 < tiles.count, index2 < tiles.count else { return }
+        tiles[index1].currentIndex = index2
+        tiles[index2].currentIndex = index1
+        tiles.swapAt(index1, index2)
+        swapPublisher.send((index1, index2))
+        checkGameCompletion()
+    }
+    
+    func dismiss() {
+        dismissPublisher.send()
     }
     
     private func setGridSize(from difficulty: Difficulty) {
@@ -96,33 +112,12 @@ class GameSessionViewModel {
         }
     }
     
-    func selectTile(at index: Int) {
-        guard index < tiles.count else { return }
-        if let selectedIndex = selectedTileIndex {
-            if selectedIndex == index {
-                selectedTileIndex = nil
-            } else {
-                swapTiles(index1: selectedIndex, index2: index)
-                selectedTileIndex = nil
-            }
-        } else {
-            selectedTileIndex = index
-        }
-    }
-    
-    func swapTiles(index1: Int, index2: Int) {
-        guard index1 < tiles.count, index2 < tiles.count else { return }
-        tiles[index1].currentIndex = index2
-        tiles[index2].currentIndex = index1
-        tiles.swapAt(index1, index2)
-        swapPublisher.send((index1, index2))
-        checkGameCompletion()
-    }
-    
     private func checkGameCompletion() {
         isGameCompleted = tiles.allSatisfy { $0.isCorrectPosition }
         if isGameCompleted {
-            print("you won")
+            saveAsCompleted()
+        } else {
+            saveAsOngoing()
         }
     }
     
@@ -143,5 +138,32 @@ class GameSessionViewModel {
         }
         
         return tileImages
+    }
+    
+    private func createRestoreData() -> [PuzzleID : [UserProfile.Tile]] {
+        let puzzleState = tiles.map { UserProfile.Tile(id: $0.id, currentIndex: $0.currentIndex, correctIndex: $0.correctIndex) }
+        let record: [PuzzleID : [UserProfile.Tile]] = [self.puzzleID : puzzleState]
+        return record
+    }
+    
+    private func saveAsOngoing() {
+        let restoreData = createRestoreData()
+        userProfileRepository
+            .updateProgress(ongoingPuzzle: restoreData)
+            .receive(on: DispatchQueue.main)
+            .first()
+            .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+            .store(in: &subscriptions)
+    }
+    
+    private func saveAsCompleted() {
+        userProfileRepository
+            .updateProgress(completedPuzzle: self.puzzleID)
+            .receive(on: DispatchQueue.main)
+            .first()
+            .sink(receiveCompletion: { _ in}, receiveValue: { profile in
+                print("SaveAsCompleted: \(profile)")
+            })
+            .store(in: &subscriptions)
     }
 }

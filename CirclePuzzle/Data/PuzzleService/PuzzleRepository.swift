@@ -23,4 +23,8 @@ class PuzzleRepository {
     func fetchAll() -> AnyPublisher<[Puzzle]?, Error> {
         dataStore.fetchAll()
     }
+    
+    func fetch(ids: Set<PuzzleID>) -> AnyPublisher<[Puzzle]?, Error> {
+        dataStore.fetch(ids: ids)
+    }
 }

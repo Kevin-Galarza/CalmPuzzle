@@ -19,6 +19,7 @@
 		185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */; };
 		185E3FDC2BFFC04700E5E398 /* GameSessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */; };
 		185E3FDE2C00EF2B00E5E398 /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDD2C00EF2B00E5E398 /* TileCell.swift */; };
+		185E3FE02C06C63800E5E398 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDF2C06C63800E5E398 /* Tile.swift */; };
 		186363952BFBA16100A330AF /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363942BFBA16100A330AF /* AppContainer.swift */; };
 		186363972BFCDCC600A330AF /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363962BFCDCC600A330AF /* Puzzle.swift */; };
 		1863639A2BFCDF7800A330AF /* PuzzleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363992BFCDF7800A330AF /* PuzzleCategory.swift */; };
@@ -112,6 +113,7 @@
 		185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewController.swift; sourceTree = "<group>"; };
 		185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionContainer.swift; sourceTree = "<group>"; };
 		185E3FDD2C00EF2B00E5E398 /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
+		185E3FDF2C06C63800E5E398 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		186363942BFBA16100A330AF /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		186363962BFCDCC600A330AF /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		186363992BFCDF7800A330AF /* PuzzleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCategory.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				186363D42BFD481C00A330AF /* ErrorPresentation.swift */,
 				186363D62BFD48A300A330AF /* Secret.swift */,
 				186363D82BFD48C900A330AF /* PuzzleID.swift */,
+				185E3FDF2C06C63800E5E398 /* Tile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				180192C22BF6FABD002E6893 /* AppDelegate.swift in Sources */,
 				186363CD2BFD45E500A330AF /* NiblessView.swift in Sources */,
 				186363D12BFD475500A330AF /* UIViewController+ErrorPresentation.swift in Sources */,
+				185E3FE02C06C63800E5E398 /* Tile.swift in Sources */,
 				186363C02BFD148200A330AF /* NotSignedInResponder.swift in Sources */,
 				186364092BFE3D0800A330AF /* SettingsViewController.swift in Sources */,
 				185E3FDC2BFFC04700E5E398 /* GameSessionContainer.swift in Sources */,

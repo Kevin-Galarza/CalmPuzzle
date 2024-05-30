@@ -42,6 +42,7 @@ class BrowseViewModel: BaseViewModel {
     func fetchPuzzles() {
         puzzleRepository
             .fetchAll()
+            .first()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -52,9 +53,9 @@ class BrowseViewModel: BaseViewModel {
                     // TODO: handle error
                 }
             },
-            receiveValue: { puzzles in
-                self.puzzles = puzzles
-                self.filterPuzzles()
+            receiveValue: { [weak self] puzzles in
+                self?.puzzles = puzzles
+                self?.filterPuzzles()
             })
             .store(in: &subscriptions)
     }
@@ -62,7 +63,6 @@ class BrowseViewModel: BaseViewModel {
     func handlePuzzleSelection(index: Int) {
         guard let puzzle = filteredPuzzles?[index] else { return }
         presentGameSessionPublisher.send(puzzle)
-        print(puzzle.id)
     }
     
     private func filterPuzzles() {

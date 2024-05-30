@@ -184,8 +184,8 @@ class AppContainer {
           return self.makeOnboardingViewController()
         }
         
-        let signedInViewControllerFactory = { (userProfile: UserProfile) in
-          return self.makeSignedInViewController(userProfile: userProfile)
+        let signedInViewControllerFactory = {
+          return self.makeSignedInViewController()
         }
 
         return MainViewController(viewModel: self.sharedMainViewModel,
@@ -213,13 +213,13 @@ class AppContainer {
     
     // MARK: Signed-in
 
-    func makeSignedInViewController(userProfile: UserProfile) -> SignedInViewController {
-        let dependencyContainer = makeSignedInContainer(userProfile: userProfile)
+    func makeSignedInViewController() -> SignedInViewController {
+        let dependencyContainer = makeSignedInContainer()
         return dependencyContainer.makeSignedInViewController()
     }
 
-    func makeSignedInContainer(userProfile: UserProfile) -> SignedInContainer  {
-        return SignedInContainer(userProfile: userProfile, appContainer: self)
+    func makeSignedInContainer() -> SignedInContainer  {
+        return SignedInContainer(appContainer: self)
     }
 }
 

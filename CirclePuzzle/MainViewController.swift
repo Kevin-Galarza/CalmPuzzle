@@ -22,13 +22,13 @@ class MainViewController: NiblessViewController {
 
     // Factories
     let makeOnboardingViewController: () -> OnboardingViewController
-    let makeSignedInViewController: (UserProfile) -> SignedInViewController
+    let makeSignedInViewController: () -> SignedInViewController
 
     // MARK: - Methods
     public init(viewModel: MainViewModel,
               launchViewController: LaunchViewController,
               onboardingViewControllerFactory: @escaping () -> OnboardingViewController,
-              signedInViewControllerFactory: @escaping (UserProfile) -> SignedInViewController) {
+              signedInViewControllerFactory: @escaping () -> SignedInViewController) {
         self.viewModel = viewModel
         self.launchViewController = launchViewController
         self.makeOnboardingViewController = onboardingViewControllerFactory
@@ -52,8 +52,8 @@ class MainViewController: NiblessViewController {
             presentLaunching()
         case .onboarding:
             presentOnboarding()
-        case .signedIn(let userProfile):
-            presentSignedIn(userProfile: userProfile)
+        case .signedIn:
+            presentSignedIn()
         }
     }
 
@@ -76,14 +76,14 @@ class MainViewController: NiblessViewController {
         self.onboardingViewController = onboardingViewController
     }
 
-    func presentSignedIn(userProfile: UserProfile) {
+    func presentSignedIn() {
         remove(childViewController: launchViewController)
 
         let signedInViewControllerToPresent: SignedInViewController
         if let vc = self.signedInViewController {
             signedInViewControllerToPresent = vc
         } else {
-            signedInViewControllerToPresent = makeSignedInViewController(userProfile)
+            signedInViewControllerToPresent = makeSignedInViewController()
             self.signedInViewController = signedInViewControllerToPresent
         }
 

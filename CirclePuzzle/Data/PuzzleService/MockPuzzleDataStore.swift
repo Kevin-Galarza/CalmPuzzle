@@ -33,4 +33,14 @@ class MockPuzzleDataStore: PuzzleDataStore {
         }
         .eraseToAnyPublisher()
     }
+    
+    func fetch(ids: Set<PuzzleID>) -> AnyPublisher<[Puzzle]?, Error> {
+        return Future<[Puzzle]?, Error> { promise in
+            DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
+                let filteredData = self.data.filter { ids.contains($0.id) }
+                promise(.success(filteredData))
+            }
+        }
+        .eraseToAnyPublisher()
+    }
 }

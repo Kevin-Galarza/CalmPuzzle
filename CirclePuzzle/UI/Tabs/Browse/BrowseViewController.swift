@@ -44,15 +44,14 @@ class BrowseViewController: NiblessViewController {
     }
     
     func presentGameSessionViewController(puzzle: Puzzle) {
-        let gameSessionViewControllerToPresent: GameSessionViewController
-        if let vc = self.gameSessionViewController {
-            gameSessionViewControllerToPresent = vc
-        } else {
-            gameSessionViewControllerToPresent = makeGameSessionViewController(puzzle)
-            self.gameSessionViewController = gameSessionViewControllerToPresent
+        if let _ = gameSessionViewController {
+            remove(childViewController: gameSessionViewController)
+            gameSessionViewController = nil
         }
+        
+        let gameSessionViewControllerToPresent = makeGameSessionViewController(puzzle)
+        gameSessionViewController = gameSessionViewControllerToPresent
 
-//        addFullScreen(childViewController: gameSessionViewControllerToPresent)
         presentFullScreenModal(childViewController: gameSessionViewControllerToPresent)
     }
 }

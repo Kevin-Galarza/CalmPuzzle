@@ -139,7 +139,6 @@ extension BrowseRootView: UICollectionViewDelegate {
         }
         
         if collectionView == puzzleCollectionView {
-//            guard let puzzle = viewModel.filteredPuzzles?[indexPath.row] else { return }
             viewModel.handlePuzzleSelection(index: indexPath.row)
         }
     }

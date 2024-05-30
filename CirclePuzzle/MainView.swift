@@ -11,7 +11,7 @@ enum MainView {
 
     case launching
     case onboarding
-    case signedIn(userProfile: UserProfile)
+    case signedIn
 }
 
 extension MainView: Equatable {
@@ -22,8 +22,8 @@ extension MainView: Equatable {
             return true
         case (.onboarding, .onboarding):
             return true
-        case let (.signedIn(l), .signedIn(r)):
-            return l == r
+        case (.signedIn, .signedIn):
+            return true
         case (.launching, _),
          (.onboarding, _),
          (.signedIn, _):

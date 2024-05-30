@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import Combine
 
 class SignedInContainer {
     
     // From parent container
     let userProfileRepository: UserProfileRepository
     let puzzleRepository: PuzzleRepository
-//    let mainViewModel: MainViewModel
 
     // Context
-    let userProfile: UserProfile
+    let userProfilePublisher: AnyPublisher<UserProfile?, Error>
     
-    init(userProfile: UserProfile, appContainer: AppContainer) {
-        
+    init(appContainer: AppContainer) {
         self.userProfileRepository = appContainer.sharedUserProfileRepository
         self.puzzleRepository = appContainer.sharedPuzzleRepository
-//        self.mainViewModel = appContainer.sharedMainViewModel
-        
-        self.userProfile = userProfile
+        self.userProfilePublisher = userProfileRepository.profilePublisher()
     }
     
     func makeSignedInViewController() -> SignedInViewController {
@@ -79,11 +76,15 @@ class SignedInContainer {
     
     func makeMyPuzzlesViewController() -> MyPuzzlesViewController {
         let viewModel = makeMyPuzzlesViewModel()
-        return MyPuzzlesViewController(viewModel: viewModel)
+        
+        let gameSessionViewControllerFactory = { (puzzle: Puzzle) in
+          return self.makeGameSessionViewController(puzzle: puzzle)
+        }
+        return MyPuzzlesViewController(viewModel: viewModel, gameSessionViewControllerFactory: gameSessionViewControllerFactory)
     }
     
     func makeMyPuzzlesViewModel() -> MyPuzzlesViewModel {
-        return MyPuzzlesViewModel()
+        return MyPuzzlesViewModel(signedInContainer: self)
     }
     
     // MARK: GameSession
@@ -94,6 +95,6 @@ class SignedInContainer {
     }
     
     func makeGameSessionContainer(puzzle: Puzzle) -> GameSessionContainer {
-        return GameSessionContainer(puzzle: puzzle, userProfile: self.userProfile, signedInContainer: self)
+        return GameSessionContainer(puzzle: puzzle, signedInContainer: self)
     }
 }
