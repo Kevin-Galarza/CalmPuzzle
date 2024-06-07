@@ -8,18 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		180192C22BF6FABD002E6893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192C12BF6FABD002E6893 /* AppDelegate.swift */; };
-		180192C62BF6FABD002E6893 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192C52BF6FABD002E6893 /* ViewController.swift */; };
 		180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180192CA2BF6FABE002E6893 /* Assets.xcassets */; };
 		180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */; };
 		180192D92BF6FABF002E6893 /* CirclePuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192D82BF6FABF002E6893 /* CirclePuzzleTests.swift */; };
 		180192E32BF6FABF002E6893 /* CirclePuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */; };
 		180192E52BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */; };
+		185E24602C1225EA009C7C68 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E245F2C1225EA009C7C68 /* SettingsSection.swift */; };
+		185E24622C122E6F009C7C68 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24612C122E6F009C7C68 /* DifficultyViewController.swift */; };
+		185E24642C123196009C7C68 /* DifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24632C123196009C7C68 /* DifficultyViewModel.swift */; };
+		185E24662C1231B7009C7C68 /* DifficultyRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24652C1231B7009C7C68 /* DifficultyRootView.swift */; };
+		185E24692C1384C4009C7C68 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24682C1384C4009C7C68 /* Difficulty.swift */; };
+		185E246B2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */; };
 		185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */; };
 		185E3FD82BFFBEB300E5E398 /* GameSessionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */; };
 		185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */; };
 		185E3FDC2BFFC04700E5E398 /* GameSessionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */; };
 		185E3FDE2C00EF2B00E5E398 /* TileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDD2C00EF2B00E5E398 /* TileCell.swift */; };
 		185E3FE02C06C63800E5E398 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FDF2C06C63800E5E398 /* Tile.swift */; };
+		185E3FE22C08CBC000E5E398 /* field-of-flowers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 185E3FE12C08CBBF00E5E398 /* field-of-flowers.jpg */; };
+		185E3FE42C08EF3900E5E398 /* PremiumPackageID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FE32C08EF3900E5E398 /* PremiumPackageID.swift */; };
+		185E3FE62C0E382800E5E398 /* StretchyHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FE52C0E382800E5E398 /* StretchyHeaderLayout.swift */; };
+		185E3FE82C0E39FB00E5E398 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FE72C0E39FB00E5E398 /* CustomHeaderView.swift */; };
 		186363952BFBA16100A330AF /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363942BFBA16100A330AF /* AppContainer.swift */; };
 		186363972BFCDCC600A330AF /* Puzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363962BFCDCC600A330AF /* Puzzle.swift */; };
 		1863639A2BFCDF7800A330AF /* PuzzleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363992BFCDF7800A330AF /* PuzzleCategory.swift */; };
@@ -55,7 +64,7 @@
 		186363E02BFD4B5D00A330AF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363DF2BFD4B5D00A330AF /* Color.swift */; };
 		186363E22BFD4B6500A330AF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E12BFD4B6500A330AF /* UIColor+Hex.swift */; };
 		186363E42BFD539400A330AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E32BFD539400A330AF /* MainView.swift */; };
-		186363E62BFD5A6A00A330AF /* RealmUserProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E52BFD5A6900A330AF /* RealmUserProfileDataStore.swift */; };
+		186363E62BFD5A6A00A330AF /* FirebaseUserProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E52BFD5A6900A330AF /* FirebaseUserProfileDataStore.swift */; };
 		186363E92BFE395200A330AF /* NiblessTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363E82BFE395200A330AF /* NiblessTabBarController.swift */; };
 		186363F12BFE3C8F00A330AF /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F02BFE3C8F00A330AF /* BrowseViewController.swift */; };
 		186363F32BFE3C9700A330AF /* BrowseRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186363F22BFE3C9700A330AF /* BrowseRootView.swift */; };
@@ -77,6 +86,7 @@
 		186364172BFF9A6B00A330AF /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364162BFF9A6B00A330AF /* CategoryCell.swift */; };
 		186364192BFFB41A00A330AF /* PuzzleTileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186364182BFFB41A00A330AF /* PuzzleTileCell.swift */; };
 		1863641B2BFFB78E00A330AF /* merchant.png in Resources */ = {isa = PBXBuildFile; fileRef = 1863641A2BFFB78D00A330AF /* merchant.png */; };
+		18681C482C120B0400CA5BE8 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18681C472C120B0400CA5BE8 /* SettingsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +109,6 @@
 /* Begin PBXFileReference section */
 		180192BE2BF6FABD002E6893 /* CirclePuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirclePuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180192C12BF6FABD002E6893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		180192C52BF6FABD002E6893 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		180192CA2BF6FABE002E6893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180192CD2BF6FABE002E6893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180192CF2BF6FABE002E6893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,12 +117,22 @@
 		180192DE2BF6FABF002E6893 /* CirclePuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclePuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleUITests.swift; sourceTree = "<group>"; };
 		180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		185E245F2C1225EA009C7C68 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
+		185E24612C122E6F009C7C68 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
+		185E24632C123196009C7C68 /* DifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewModel.swift; sourceTree = "<group>"; };
+		185E24652C1231B7009C7C68 /* DifficultyRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyRootView.swift; sourceTree = "<group>"; };
+		185E24682C1384C4009C7C68 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
+		185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePuzzleDataStore.swift; sourceTree = "<group>"; };
 		185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
 		185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionRootView.swift; sourceTree = "<group>"; };
 		185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewController.swift; sourceTree = "<group>"; };
 		185E3FDB2BFFC04700E5E398 /* GameSessionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionContainer.swift; sourceTree = "<group>"; };
 		185E3FDD2C00EF2B00E5E398 /* TileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileCell.swift; sourceTree = "<group>"; };
 		185E3FDF2C06C63800E5E398 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		185E3FE12C08CBBF00E5E398 /* field-of-flowers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "field-of-flowers.jpg"; path = "data/field-of-flowers.jpg"; sourceTree = SOURCE_ROOT; };
+		185E3FE32C08EF3900E5E398 /* PremiumPackageID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPackageID.swift; sourceTree = "<group>"; };
+		185E3FE52C0E382800E5E398 /* StretchyHeaderLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyHeaderLayout.swift; sourceTree = "<group>"; };
+		185E3FE72C0E39FB00E5E398 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		186363942BFBA16100A330AF /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		186363962BFCDCC600A330AF /* Puzzle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puzzle.swift; sourceTree = "<group>"; };
 		186363992BFCDF7800A330AF /* PuzzleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleCategory.swift; sourceTree = "<group>"; };
@@ -149,7 +168,7 @@
 		186363DF2BFD4B5D00A330AF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		186363E12BFD4B6500A330AF /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		186363E32BFD539400A330AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		186363E52BFD5A6900A330AF /* RealmUserProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUserProfileDataStore.swift; sourceTree = "<group>"; };
+		186363E52BFD5A6900A330AF /* FirebaseUserProfileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserProfileDataStore.swift; sourceTree = "<group>"; };
 		186363E82BFE395200A330AF /* NiblessTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiblessTabBarController.swift; sourceTree = "<group>"; };
 		186363F02BFE3C8F00A330AF /* BrowseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
 		186363F22BFE3C9700A330AF /* BrowseRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseRootView.swift; sourceTree = "<group>"; };
@@ -171,6 +190,7 @@
 		186364162BFF9A6B00A330AF /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		186364182BFFB41A00A330AF /* PuzzleTileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTileCell.swift; sourceTree = "<group>"; };
 		1863641A2BFFB78D00A330AF /* merchant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = merchant.png; sourceTree = "<group>"; };
+		18681C472C120B0400CA5BE8 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +241,6 @@
 		180192C02BF6FABD002E6893 /* CirclePuzzle */ = {
 			isa = PBXGroup;
 			children = (
-				180192C52BF6FABD002E6893 /* ViewController.swift */,
 				180192C12BF6FABD002E6893 /* AppDelegate.swift */,
 				186363942BFBA16100A330AF /* AppContainer.swift */,
 				186363AB2BFCF51B00A330AF /* MainViewModel.swift */,
@@ -254,16 +273,28 @@
 			path = CirclePuzzleUITests;
 			sourceTree = "<group>";
 		};
+		185E24672C12324C009C7C68 /* Difficulty */ = {
+			isa = PBXGroup;
+			children = (
+				185E24612C122E6F009C7C68 /* DifficultyViewController.swift */,
+				185E24652C1231B7009C7C68 /* DifficultyRootView.swift */,
+				185E24632C123196009C7C68 /* DifficultyViewModel.swift */,
+			);
+			path = Difficulty;
+			sourceTree = "<group>";
+		};
 		186363982BFCDF6500A330AF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				186363962BFCDCC600A330AF /* Puzzle.swift */,
 				186363992BFCDF7800A330AF /* PuzzleCategory.swift */,
+				185E24682C1384C4009C7C68 /* Difficulty.swift */,
 				186363A92BFCEC3300A330AF /* UserProfile.swift */,
 				186363D22BFD481200A330AF /* ErrorMessage.swift */,
 				186363D42BFD481C00A330AF /* ErrorPresentation.swift */,
 				186363D62BFD48A300A330AF /* Secret.swift */,
 				186363D82BFD48C900A330AF /* PuzzleID.swift */,
+				185E3FE32C08EF3900E5E398 /* PremiumPackageID.swift */,
 				185E3FDF2C06C63800E5E398 /* Tile.swift */,
 			);
 			path = Models;
@@ -275,6 +306,7 @@
 				1863639C2BFCDFD600A330AF /* PuzzleRepository.swift */,
 				1863639E2BFCDFFC00A330AF /* PuzzleDataStore.swift */,
 				186363A02BFCE01500A330AF /* MockPuzzleDataStore.swift */,
+				185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */,
 			);
 			path = PuzzleService;
 			sourceTree = "<group>";
@@ -285,7 +317,7 @@
 				186363A32BFCEB8D00A330AF /* UserProfileRepository.swift */,
 				186363A52BFCEB9F00A330AF /* UserProfileDataStore.swift */,
 				186363A72BFCEBA900A330AF /* MockUserProfileDataStore.swift */,
-				186363E52BFD5A6900A330AF /* RealmUserProfileDataStore.swift */,
+				186363E52BFD5A6900A330AF /* FirebaseUserProfileDataStore.swift */,
 			);
 			path = UserProfileService;
 			sourceTree = "<group>";
@@ -325,7 +357,7 @@
 		186363CA2BFD452300A330AF /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				186364152BFF8C5300A330AF /* ImageStore */,
+				186364152BFF8C5300A330AF /* LocalImageStorage */,
 				186363A22BFCEB6D00A330AF /* UserProfileService */,
 				1863639B2BFCDF8C00A330AF /* PuzzleService */,
 				186363982BFCDF6500A330AF /* Models */,
@@ -377,6 +409,8 @@
 				186363F42BFE3CA600A330AF /* BrowseViewModel.swift */,
 				186364162BFF9A6B00A330AF /* CategoryCell.swift */,
 				186364182BFFB41A00A330AF /* PuzzleTileCell.swift */,
+				185E3FE52C0E382800E5E398 /* StretchyHeaderLayout.swift */,
+				185E3FE72C0E39FB00E5E398 /* CustomHeaderView.swift */,
 			);
 			path = Browse;
 			sourceTree = "<group>";
@@ -407,6 +441,9 @@
 				186364082BFE3D0800A330AF /* SettingsViewController.swift */,
 				1863640A2BFE3D1200A330AF /* SettingsRootView.swift */,
 				1863640C2BFE3D2A00A330AF /* SettingsViewModel.swift */,
+				18681C472C120B0400CA5BE8 /* SettingsCell.swift */,
+				185E245F2C1225EA009C7C68 /* SettingsSection.swift */,
+				185E24672C12324C009C7C68 /* Difficulty */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -446,12 +483,13 @@
 			path = Tabs;
 			sourceTree = "<group>";
 		};
-		186364152BFF8C5300A330AF /* ImageStore */ = {
+		186364152BFF8C5300A330AF /* LocalImageStorage */ = {
 			isa = PBXGroup;
 			children = (
+				185E3FE12C08CBBF00E5E398 /* field-of-flowers.jpg */,
 				1863641A2BFFB78D00A330AF /* merchant.png */,
 			);
-			path = ImageStore;
+			path = LocalImageStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,6 +596,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185E3FE22C08CBC000E5E398 /* field-of-flowers.jpg in Resources */,
 				1863641B2BFFB78E00A330AF /* merchant.png in Resources */,
 				180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */,
 				180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */,
@@ -585,19 +624,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185E24692C1384C4009C7C68 /* Difficulty.swift in Sources */,
+				185E3FE62C0E382800E5E398 /* StretchyHeaderLayout.swift in Sources */,
 				186363FD2BFE3CD700A330AF /* ShopViewController.swift in Sources */,
 				186363F32BFE3C9700A330AF /* BrowseRootView.swift in Sources */,
 				186363E92BFE395200A330AF /* NiblessTabBarController.swift in Sources */,
 				186363972BFCDCC600A330AF /* Puzzle.swift in Sources */,
 				186364132BFE4E5400A330AF /* BaseRootView.swift in Sources */,
 				186363E42BFD539400A330AF /* MainView.swift in Sources */,
-				186363E62BFD5A6A00A330AF /* RealmUserProfileDataStore.swift in Sources */,
+				186363E62BFD5A6A00A330AF /* FirebaseUserProfileDataStore.swift in Sources */,
 				186363C22BFD165700A330AF /* SignedInContainer.swift in Sources */,
 				185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */,
 				186363B62BFD0B0500A330AF /* OnboardingContainer.swift in Sources */,
 				186363DD2BFD49CB00A330AF /* ErrorMessagePresentation.swift in Sources */,
 				186363D72BFD48A300A330AF /* Secret.swift in Sources */,
 				186363D32BFD481200A330AF /* ErrorMessage.swift in Sources */,
+				185E3FE82C0E39FB00E5E398 /* CustomHeaderView.swift in Sources */,
 				186363F92BFE3CC300A330AF /* DailyPuzzleRootView.swift in Sources */,
 				1863640B2BFE3D1200A330AF /* SettingsRootView.swift in Sources */,
 				186364012BFE3CE600A330AF /* ShopViewModel.swift in Sources */,
@@ -612,21 +654,23 @@
 				186363F52BFE3CA600A330AF /* BrowseViewModel.swift in Sources */,
 				186363E02BFD4B5D00A330AF /* Color.swift in Sources */,
 				186363D92BFD48C900A330AF /* PuzzleID.swift in Sources */,
+				185E24642C123196009C7C68 /* DifficultyViewModel.swift in Sources */,
 				186363A82BFCEBA900A330AF /* MockUserProfileDataStore.swift in Sources */,
 				185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */,
 				185E3FDE2C00EF2B00E5E398 /* TileCell.swift in Sources */,
-				180192C62BF6FABD002E6893 /* ViewController.swift in Sources */,
 				186363FF2BFE3CDF00A330AF /* ShopRootView.swift in Sources */,
 				186363F12BFE3C8F00A330AF /* BrowseViewController.swift in Sources */,
 				186364072BFE3CFF00A330AF /* MyPuzzlesViewModel.swift in Sources */,
 				186363952BFBA16100A330AF /* AppContainer.swift in Sources */,
 				186363CF2BFD45F000A330AF /* NiblessViewController.swift in Sources */,
 				1863640D2BFE3D2A00A330AF /* SettingsViewModel.swift in Sources */,
+				185E3FE42C08EF3900E5E398 /* PremiumPackageID.swift in Sources */,
 				1863639A2BFCDF7800A330AF /* PuzzleCategory.swift in Sources */,
 				1863639D2BFCDFD600A330AF /* PuzzleRepository.swift in Sources */,
 				186363BC2BFD133B00A330AF /* BaseViewModel.swift in Sources */,
 				186363B42BFD0AD600A330AF /* OnboardingViewController.swift in Sources */,
 				186363B22BFD0A6600A330AF /* LaunchViewModel.swift in Sources */,
+				185E246B2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift in Sources */,
 				186363AC2BFCF51B00A330AF /* MainViewModel.swift in Sources */,
 				186364192BFFB41A00A330AF /* PuzzleTileCell.swift in Sources */,
 				186363A42BFCEB8D00A330AF /* UserProfileRepository.swift in Sources */,
@@ -636,10 +680,13 @@
 				180192C22BF6FABD002E6893 /* AppDelegate.swift in Sources */,
 				186363CD2BFD45E500A330AF /* NiblessView.swift in Sources */,
 				186363D12BFD475500A330AF /* UIViewController+ErrorPresentation.swift in Sources */,
+				185E24602C1225EA009C7C68 /* SettingsSection.swift in Sources */,
+				18681C482C120B0400CA5BE8 /* SettingsCell.swift in Sources */,
 				185E3FE02C06C63800E5E398 /* Tile.swift in Sources */,
 				186363C02BFD148200A330AF /* NotSignedInResponder.swift in Sources */,
 				186364092BFE3D0800A330AF /* SettingsViewController.swift in Sources */,
 				185E3FDC2BFFC04700E5E398 /* GameSessionContainer.swift in Sources */,
+				185E24622C122E6F009C7C68 /* DifficultyViewController.swift in Sources */,
 				186363D52BFD481C00A330AF /* ErrorPresentation.swift in Sources */,
 				186363A62BFCEB9F00A330AF /* UserProfileDataStore.swift in Sources */,
 				186363B82BFD0D8B00A330AF /* OnboardingViewModel.swift in Sources */,
@@ -647,6 +694,7 @@
 				186363E22BFD4B6500A330AF /* UIColor+Hex.swift in Sources */,
 				186363C72BFD44B500A330AF /* OnboardingRootView.swift in Sources */,
 				186363AA2BFCEC3300A330AF /* UserProfile.swift in Sources */,
+				185E24662C1231B7009C7C68 /* DifficultyRootView.swift in Sources */,
 				186363F72BFE3CB700A330AF /* DailyPuzzleViewController.swift in Sources */,
 				186363B02BFD0A5D00A330AF /* LaunchViewController.swift in Sources */,
 			);

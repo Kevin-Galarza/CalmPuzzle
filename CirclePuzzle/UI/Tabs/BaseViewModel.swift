@@ -10,4 +10,9 @@ import Combine
 
 class BaseViewModel {
     
+    let presentSettingsPublisher = PassthroughSubject<Void, Never>()
+    
+    func showSettings() {
+        presentSettingsPublisher.send()
+    }
 }

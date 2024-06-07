@@ -67,9 +67,11 @@ class MockUserProfileDataStore: UserProfileDataStore {
                     appProgress: newProgress,
                     deviceInfo: data.deviceInfo,
                     adsEnabled: data.adsEnabled,
+                    premiumPackagesUnlocked: data.premiumPackagesUnlocked,
                     hints: data.hints,
                     coins: data.coins,
                     credits: data.credits,
+                    difficulty: data.difficulty,
                     createdTimestamp: data.createdTimestamp
                 )
                 self.data = newUserProfile
@@ -91,8 +93,8 @@ class MockUserProfileDataStore: UserProfileDataStore {
                 var newCompletedPuzzles = Set<PuzzleID>(data.appProgress.completedPuzzles ?? [])
                 var newOngoingPuzzles: [PuzzleID : [UserProfile.Tile]] = data.appProgress.ongoingPuzzles ?? [:]
                 
-                print("New Completed Puzzles: \(newCompletedPuzzles)")
-                print("New Ongoing Puzzles: \(newOngoingPuzzles)")
+//                print("New Completed Puzzles: \(newCompletedPuzzles)")
+//                print("New Ongoing Puzzles: \(newOngoingPuzzles)")
 
                 // Process each ongoing puzzle provided
                 for (puzzleID, tiles) in ongoingPuzzle {
@@ -116,9 +118,11 @@ class MockUserProfileDataStore: UserProfileDataStore {
                     appProgress: newProgress,
                     deviceInfo: data.deviceInfo,
                     adsEnabled: data.adsEnabled,
+                    premiumPackagesUnlocked: data.premiumPackagesUnlocked,
                     hints: data.hints,
                     coins: data.coins,
                     credits: data.credits,
+                    difficulty: data.difficulty,
                     createdTimestamp: data.createdTimestamp
                 )
                 self.data = newUserProfile

@@ -8,6 +8,9 @@
 import UIKit
 import Combine
 
+// TODO: Lock tiles in the correct position, expose locked tile publisher to play shake animation on tile
+// TODO: Extend game session with post game: show completed puzzle image, present next puzzle & menu buttons, puzzle complete label, sounds
+
 class GameSessionViewModel {
     
     let userProfilePublisher: AnyPublisher<UserProfile?, Error>
@@ -24,6 +27,7 @@ class GameSessionViewModel {
     
     let swapPublisher = PassthroughSubject<(Int, Int), Never>()
     let dismissPublisher = PassthroughSubject<Void, Never>()
+    let lockedTilePublisher = PassthroughSubject<Int, Never>()
     
     private var subscriptions = Set<AnyCancellable>()
     
@@ -33,8 +37,6 @@ class GameSessionViewModel {
         self.puzzleRepository = puzzleRepository
         self.puzzleID = puzzle.id
         
-        setGridSize(from: puzzle.difficulty)
-        
         userProfilePublisher
             .compactMap { $0 }  // Ensure the UserProfile is not nil
             .receive(on: DispatchQueue.main)
@@ -43,14 +45,20 @@ class GameSessionViewModel {
 
             }, receiveValue: { [weak self] userProfile in
                 let progress = userProfile.appProgress.ongoingPuzzles?[puzzle.id]
+                self?.setGridSize(from: userProfile.difficulty)
                 self?.initializeTiles(from: puzzle, with: progress)
-                print(userProfile)
             })
             .store(in: &subscriptions)
     }
     
     func selectTile(at index: Int) {
         guard index < tiles.count else { return }
+        
+        if isTileLocked(index: index) {
+            lockedTilePublisher.send(index)
+            return
+        }
+        
         if let selectedIndex = selectedTileIndex {
             if selectedIndex == index {
                 selectedTileIndex = nil
@@ -65,15 +73,36 @@ class GameSessionViewModel {
     
     func swapTiles(index1: Int, index2: Int) {
         guard index1 < tiles.count, index2 < tiles.count else { return }
+        swapPublisher.send((index1, index2)) // TODO: Verify swap publisher will always complete execution before the tiles data in view model is updated. Might have a race condition between tiles publisher and swap publisher.
         tiles[index1].currentIndex = index2
         tiles[index2].currentIndex = index1
         tiles.swapAt(index1, index2)
-        swapPublisher.send((index1, index2))
         checkGameCompletion()
     }
     
     func dismiss() {
         dismissPublisher.send()
+    }
+    
+    func provideHint() {
+        let misplacedTiles = tiles.filter { $0.isCorrectPosition == false }
+        guard let randomMisplacedTile = misplacedTiles.randomElement() else {
+            print("No hint available: All tiles are correctly placed or no tiles available.")
+            return
+        }
+        
+        let tileAtCorrectPosition = tiles.firstIndex { $0.currentIndex == randomMisplacedTile.correctIndex }
+        guard let swapWithIndex = tileAtCorrectPosition else {
+            print("No suitable tile found for swapping.")
+            return
+        }
+
+        swapTiles(index1: randomMisplacedTile.currentIndex, index2: swapWithIndex)
+    }
+    
+    private func isTileLocked(index: Int) -> Bool {
+        let tile = tiles[index]
+        return tile.isCorrectPosition // tile is locked if isCorrectPosition == true
     }
     
     private func setGridSize(from difficulty: Difficulty) {
@@ -103,7 +132,6 @@ class GameSessionViewModel {
             // Sort tiles to match the currentIndex to their index in the array if progress exists
             tiles.sort(by: { $0.currentIndex < $1.currentIndex })
         } else {
-            // Shuffle tiles directly in the existing array if no progress is provided
             tiles.shuffle()
             // Update currentIndex after shuffling to match new positions
             for (newIndex, tile) in tiles.enumerated() {
@@ -162,8 +190,17 @@ class GameSessionViewModel {
             .receive(on: DispatchQueue.main)
             .first()
             .sink(receiveCompletion: { _ in}, receiveValue: { profile in
-                print("SaveAsCompleted: \(profile)")
+//                print("SaveAsCompleted: \(profile)")
             })
             .store(in: &subscriptions)
+    }
+}
+
+extension GameSessionViewModel {
+    private func debugTiles() {
+        print("")
+        for (index, tile) in tiles.enumerated() {
+            print("index: \(index) - tile current: \(tile.currentIndex), tile correct: \(tile.correctIndex) ")
+        }
     }
 }

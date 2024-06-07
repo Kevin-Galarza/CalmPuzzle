@@ -16,13 +16,16 @@ class MyPuzzlesViewController: NiblessViewController {
     
     // child vc
     var gameSessionViewController: GameSessionViewController?
+    var settingsViewController: SettingsViewController?
     
     // factory
     let makeGameSessionViewController: (Puzzle) -> GameSessionViewController
+    let makeSettingsViewController: () -> SettingsViewController
     
-    init(viewModel: MyPuzzlesViewModel, gameSessionViewControllerFactory: @escaping (Puzzle) -> GameSessionViewController) {
+    init(viewModel: MyPuzzlesViewModel, gameSessionViewControllerFactory: @escaping (Puzzle) -> GameSessionViewController, settingsViewControllerFactory: @escaping () -> SettingsViewController) {
         self.viewModel = viewModel
         self.makeGameSessionViewController = gameSessionViewControllerFactory
+        self.makeSettingsViewController = settingsViewControllerFactory
         super.init()
         
         viewModel
@@ -31,6 +34,14 @@ class MyPuzzlesViewController: NiblessViewController {
             .sink { [weak self] puzzle in
                 guard let strongSelf = self else { return }
                 strongSelf.presentGameSessionViewController(puzzle: puzzle)
+            }
+            .store(in: &subscriptions)
+        
+        viewModel
+            .presentSettingsPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.presentSettingsViewController()
             }
             .store(in: &subscriptions)
     }
@@ -49,5 +60,17 @@ class MyPuzzlesViewController: NiblessViewController {
         gameSessionViewController = gameSessionViewControllerToPresent
 
         presentFullScreenModal(childViewController: gameSessionViewControllerToPresent)
+    }
+    
+    func presentSettingsViewController() {
+        if let _ = settingsViewController {
+            remove(childViewController: settingsViewController)
+            settingsViewController = nil
+        }
+        
+        let settingsViewControllerToPresent = makeSettingsViewController()
+        settingsViewController = settingsViewControllerToPresent
+        
+        presentFullScreenModal(childViewController: settingsViewControllerToPresent)
     }
 }

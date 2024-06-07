@@ -14,4 +14,5 @@ enum PuzzleCategory: String, CaseIterable, Codable {
     case medium
     case hard
     case premium
+    case nature
 }

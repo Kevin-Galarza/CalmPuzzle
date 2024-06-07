@@ -13,7 +13,7 @@ class SignedInContainer {
     // From parent container
     let userProfileRepository: UserProfileRepository
     let puzzleRepository: PuzzleRepository
-
+    
     // Context
     let userProfilePublisher: AnyPublisher<UserProfile?, Error>
     
@@ -40,10 +40,14 @@ class SignedInContainer {
         let viewModel = makeBrowseViewModel()
         
         let gameSessionViewControllerFactory = { (puzzle: Puzzle) in
-          return self.makeGameSessionViewController(puzzle: puzzle)
+            return self.makeGameSessionViewController(puzzle: puzzle)
         }
         
-        return BrowseViewController(viewModel: viewModel, gameSessionViewControllerFactory: gameSessionViewControllerFactory)
+        let settingsViewControllerFactory = { () in
+            return self.makeSettingsViewController()
+        }
+        
+        return BrowseViewController(viewModel: viewModel, gameSessionViewControllerFactory: gameSessionViewControllerFactory, settingsViewControllerFactory: settingsViewControllerFactory)
     }
     
     func makeBrowseViewModel() -> BrowseViewModel {
@@ -54,7 +58,12 @@ class SignedInContainer {
     
     func makeDailyPuzzleViewController() -> DailyPuzzleViewController {
         let viewModel = makeDailyPuzzleViewModel()
-        return DailyPuzzleViewController(viewModel: viewModel)
+        
+        let settingsViewControllerFactory = { () in
+            return self.makeSettingsViewController()
+        }
+        
+        return DailyPuzzleViewController(viewModel: viewModel, settingsViewControllerFactory: settingsViewControllerFactory)
     }
     
     func makeDailyPuzzleViewModel() -> DailyPuzzleViewModel {
@@ -78,9 +87,14 @@ class SignedInContainer {
         let viewModel = makeMyPuzzlesViewModel()
         
         let gameSessionViewControllerFactory = { (puzzle: Puzzle) in
-          return self.makeGameSessionViewController(puzzle: puzzle)
+            return self.makeGameSessionViewController(puzzle: puzzle)
         }
-        return MyPuzzlesViewController(viewModel: viewModel, gameSessionViewControllerFactory: gameSessionViewControllerFactory)
+        
+        let settingsViewControllerFactory = { () in
+            return self.makeSettingsViewController()
+        }
+        
+        return MyPuzzlesViewController(viewModel: viewModel, gameSessionViewControllerFactory: gameSessionViewControllerFactory, settingsViewControllerFactory: settingsViewControllerFactory)
     }
     
     func makeMyPuzzlesViewModel() -> MyPuzzlesViewModel {
@@ -96,5 +110,32 @@ class SignedInContainer {
     
     func makeGameSessionContainer(puzzle: Puzzle) -> GameSessionContainer {
         return GameSessionContainer(puzzle: puzzle, signedInContainer: self)
+    }
+    
+    // MARK: Settings
+    
+    func makeSettingsViewModel() -> SettingsViewModel {
+        return SettingsViewModel(userProfilePublisher: self.userProfilePublisher, userProfileRepository: self.userProfileRepository)
+    }
+    
+    func makeSettingsViewController() -> SettingsViewController {
+        let viewModel = makeSettingsViewModel()
+        
+        let difficultyViewControllerFactory = { () in
+            return self.makeDifficultyViewController()
+        }
+        
+        return SettingsViewController(viewModel: viewModel, difficultyViewControllerFactory: difficultyViewControllerFactory)
+    }
+    
+    // MARK: Difficulty
+    
+    func makeDifficultyViewModel() -> DifficultyViewModel {
+        return DifficultyViewModel(userProfilePublisher: self.userProfilePublisher, userProfileRepository: self.userProfileRepository)
+    }
+    
+    func makeDifficultyViewController() -> DifficultyViewController {
+        let viewModel = makeDifficultyViewModel()
+        return DifficultyViewController(viewModel: viewModel)
     }
 }

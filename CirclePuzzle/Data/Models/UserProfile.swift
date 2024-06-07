@@ -14,9 +14,11 @@ struct UserProfile: Codable {
     let appProgress: AppProgress
     let deviceInfo: DeviceInfo
     let adsEnabled: Bool
+    let premiumPackagesUnlocked: [PremiumPackageID]?
     let hints: Int
     let coins: Int
     let credits: Int
+    let difficulty: Difficulty
     let createdTimestamp: Date
     
     struct DeviceInfo: Equatable, Codable {
@@ -50,6 +52,7 @@ extension UserProfile: Equatable {
             lhs.appProgress == rhs.appProgress &&
             lhs.deviceInfo == rhs.deviceInfo &&
             lhs.adsEnabled == rhs.adsEnabled &&
+            lhs.premiumPackagesUnlocked == rhs.premiumPackagesUnlocked &&
             lhs.hints == rhs.hints &&
             lhs.coins == rhs.coins &&
             lhs.credits == rhs.credits &&

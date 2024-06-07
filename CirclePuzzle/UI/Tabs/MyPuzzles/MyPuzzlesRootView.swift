@@ -8,31 +8,39 @@
 import UIKit
 import Combine
 
-import UIKit
-import Combine
-
 class MyPuzzlesRootView: BaseRootView {
     
     private var subscriptions = Set<AnyCancellable>()
     
-    // UI Components
+    private let header: UIView = {
+        let view = UIView()
+        view.backgroundColor = Color.primaryPurple
+        return view
+    }()
+    
     private let segmentedControl: UISegmentedControl = {
         let control = UISegmentedControl(items: ["In Progress", "Completed"])
         control.selectedSegmentIndex = 0
-        control.backgroundColor = .systemBackground
-        control.selectedSegmentTintColor = .systemBlue
+        control.backgroundColor = UIColor.black.withAlphaComponent(0.04)
+        control.selectedSegmentTintColor = Color.primaryPurple
+        
+        let defaultAttributes = [NSAttributedString.Key.foregroundColor: Color.textBlack]
+        control.setTitleTextAttributes(defaultAttributes, for: .normal)
+        let selectedAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        control.setTitleTextAttributes(selectedAttributes, for: .selected)
+        
         return control
     }()
     
     private let puzzleCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 10, height: UIScreen.main.bounds.width / 2 - 10)
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 16
+        layout.minimumLineSpacing = 16
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.contentInsetAdjustmentBehavior = .never
         return collectionView
     }()
     
@@ -44,11 +52,17 @@ class MyPuzzlesRootView: BaseRootView {
         setupBindings()
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.bringSubviewToFront(settingsButton)
+    }
+    
     private func applyStyle() {
-        backgroundColor = .systemRed
+        backgroundColor = .white
     }
     
     private func constructHierarchy() {
+        addSubview(header)
         addSubview(segmentedControl)
         addSubview(puzzleCollectionView)
 
@@ -58,17 +72,22 @@ class MyPuzzlesRootView: BaseRootView {
     }
     
     private func applyConstraints() {
+        header.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         puzzleCollectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            segmentedControl.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
+            header.widthAnchor.constraint(equalTo: widthAnchor),
+            header.heightAnchor.constraint(equalToConstant: 120),
+            header.topAnchor.constraint(equalTo: topAnchor),
+            
+            segmentedControl.topAnchor.constraint(equalTo: header.bottomAnchor, constant: 20),
             segmentedControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             segmentedControl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-            puzzleCollectionView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 10),
-            puzzleCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            puzzleCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            puzzleCollectionView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20),
+            puzzleCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            puzzleCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             puzzleCollectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
@@ -117,5 +136,15 @@ extension MyPuzzlesRootView: UICollectionViewDelegate {
         guard let viewModel = viewModel as? MyPuzzlesViewModel else { return }
         viewModel.handlePuzzleSelection(index: indexPath.row)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+    }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MyPuzzlesRootView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width / 2 - 24, height: UIScreen.main.bounds.width / 2 - 24)
+    }
+}

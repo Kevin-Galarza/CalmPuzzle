@@ -45,7 +45,7 @@ class MyPuzzlesViewModel: BaseViewModel {
                     print("Error: \(error)")
                 }
             }, receiveValue: { [weak self] userProfile in
-                print("MyPuzzles User Profile updated: \(userProfile)")
+//                print("MyPuzzles User Profile updated: \(userProfile)")
                 self?.userProfile = userProfile
                 self?.fetchPuzzles(using: userProfile)
             })
@@ -88,56 +88,6 @@ class MyPuzzlesViewModel: BaseViewModel {
             })
             .store(in: &self.subscriptions)
     }
-    
-//    private func updatePuzzlesBasedOn(userProfile: UserProfile?) {
-//        guard let userProfile = userProfile else {
-//            self.puzzles = nil
-//            return
-//        }
-//        fetchPuzzles()
-//    }
-    
-//    func fetchPuzzles(using userProfile: UserProfile) {
-//        userProfilePublisher
-//            .compactMap { $0 }
-//            .receive(on: DispatchQueue.main)
-//            .sink { completion in
-//                switch completion {
-//                case .finished:
-//                    break
-//                case .failure(let error):
-//                    print("Error fetching user profile: \(error)")
-//                }
-//            } receiveValue: { [weak self] userProfile in
-//                guard let self = self else { return }
-//                let ids: Set<PuzzleID> = {
-//                    if self.selectedSegment == .inProgress {
-//                        if let keys = userProfile?.appProgress.ongoingPuzzles?.keys {
-//                            return Set<PuzzleID>(keys)
-//                        }
-//                        return Set<PuzzleID>()
-//                    } else {
-//                        return userProfile?.appProgress.completedPuzzles ?? Set()
-//                    }
-//                }()
-//                
-//                self.puzzleRepository.fetch(ids: ids)
-//                    .receive(on: DispatchQueue.main)
-//                    .first()
-//                    .sink(receiveCompletion: { completion in
-//                        switch completion {
-//                        case .finished:
-//                            break
-//                        case .failure(let error):
-//                            print("Error fetching puzzles: \(error)")
-//                        }
-//                    }, receiveValue: { [weak self] puzzles in
-//                        self?.puzzles = puzzles
-//                    })
-//                    .store(in: &self.subscriptions)
-//            }
-//            .store(in: &subscriptions)
-//    }
     
     func handlePuzzleSelection(index: Int) {
         guard let puzzle = puzzles?[index] else { return }

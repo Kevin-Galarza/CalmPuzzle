@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum Difficulty: String, Codable {
-    case easy, medium, hard, pro
-}
-
 struct Puzzle: Codable {
     
     let id: String
@@ -18,5 +14,5 @@ struct Puzzle: Codable {
     let url: URL
     let categories: [PuzzleCategory]
     let isPremium: Bool
-    let difficulty: Difficulty
+    let premiumPackageID: PremiumPackageID?
 }

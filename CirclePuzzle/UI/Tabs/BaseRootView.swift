@@ -14,9 +14,7 @@ class BaseRootView: NiblessView {
     
     let settingsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Settings", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .white
+        button.setImage(UIImage(named: "settings_button"), for: .normal)
         return button
     }()
     
@@ -28,13 +26,18 @@ class BaseRootView: NiblessView {
     }
     
     private func constructHierarchy() {
+        settingsButton.addTarget(self, action: #selector(handleSettingButtonTap), for: .touchUpInside)
         addSubview(settingsButton)
+    }
+    
+    @objc private func handleSettingButtonTap() {
+        viewModel.showSettings()
     }
     
     private func applyConstraints() {
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            settingsButton.widthAnchor.constraint(equalToConstant: 88),
+            settingsButton.widthAnchor.constraint(equalToConstant: 44),
             settingsButton.heightAnchor.constraint(equalToConstant: 44),
             settingsButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             settingsButton.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -16)

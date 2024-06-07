@@ -1,13 +1,14 @@
 //
-//  RealmUserProfileDataStore.swift
+//  FirebaseUserProfileDataStore.swift
 //  CirclePuzzle
 //
 //  Created by Kevin Galarza on 5/21/24.
 //
 
 import Foundation
+import Combine
 
-//class RealmUserProfileDataStore: UserProfileDataStore {
+//class FirebaseUserProfileDataStore: UserProfileDataStore {
 //    func create(userProfile: UserProfile) -> AnyPublisher<UserProfile?, Error> {
 //        <#code#>
 //    }

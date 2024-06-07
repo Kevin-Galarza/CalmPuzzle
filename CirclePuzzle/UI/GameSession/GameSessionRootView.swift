@@ -12,8 +12,13 @@ class GameSessionRootView: UIView {
     
     let backButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Back", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setImage(UIImage(named: "back_button"), for: .normal)
+        return button
+    }()
+    
+    let hintButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "hint_button"), for: .normal)
         return button
     }()
     
@@ -37,25 +42,38 @@ class GameSessionRootView: UIView {
     }
     
     private func applyStyle() {
-        backgroundColor = .gray
+        backgroundColor = .white
     }
     
     private func constructHierarchy() {
         backButton.addTarget(self, action: #selector(handleBackButtonTap), for: .touchUpInside)
+        hintButton.addTarget(self, action: #selector(handleHintButtonTap), for: .touchUpInside)
         addSubview(backButton)
+        addSubview(hintButton)
     }
     
     @objc private func handleBackButtonTap() {
         viewModel.dismiss()
     }
     
+    @objc private func handleHintButtonTap() {
+        viewModel.provideHint()
+    }
+    
     private func applyConstraints() {
         backButton.translatesAutoresizingMaskIntoConstraints = false
+        hintButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            backButton.widthAnchor.constraint(equalToConstant: 88),
+            backButton.widthAnchor.constraint(equalToConstant: 44),
             backButton.heightAnchor.constraint(equalToConstant: 44),
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            backButton.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16)
+            backButton.leftAnchor.constraint(equalTo: safeAreaLayoutGuide.leftAnchor, constant: 16),
+            
+            hintButton.widthAnchor.constraint(equalToConstant: 44),
+            hintButton.heightAnchor.constraint(equalToConstant: 44),
+            hintButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            hintButton.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor, constant: -16)
         ])
     }
 
@@ -96,8 +114,17 @@ class GameSessionRootView: UIView {
             .store(in: &subscriptions)
 
         viewModel.swapPublisher
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] swapInfo in
+                print("swap animate")
                 self?.animateSwap(index1: swapInfo.0, index2: swapInfo.1)
+            }
+            .store(in: &subscriptions)
+        
+        viewModel.lockedTilePublisher
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] index in
+                self?.animateLockedTile(index: index)
             }
             .store(in: &subscriptions)
     }
@@ -120,6 +147,24 @@ class GameSessionRootView: UIView {
         collectionView.performBatchUpdates({
             collectionView.moveItem(at: IndexPath(item: index1, section: 0), to: IndexPath(item: index2, section: 0))
             collectionView.moveItem(at: IndexPath(item: index2, section: 0), to: IndexPath(item: index1, section: 0))
+        }, completion: nil)
+    }
+    
+    private func animateLockedTile(index: Int) {
+        guard let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) else {
+            return
+        }
+
+        UIView.animateKeyframes(withDuration: 0.5, delay: 0, options: [], animations: {
+            // Add keyframes for the animation
+            UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25) {
+                // Increase the scale of the cell
+                cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            }
+            UIView.addKeyframe(withRelativeStartTime: 0.25, relativeDuration: 0.25) {
+                // Return the scale to normal
+                cell.transform = CGAffineTransform.identity
+            }
         }, completion: nil)
     }
 }

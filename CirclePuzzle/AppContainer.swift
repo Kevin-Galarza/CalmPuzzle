@@ -29,9 +29,11 @@ class AppContainer {
                        appProgress: appProgress,
                        deviceInfo: deviceInfo,
                        adsEnabled: true,
+                       premiumPackagesUnlocked: nil,
                        hints: 10,
                        coins: 100,
                        credits: 10,
+                       difficulty: .medium,
                        createdTimestamp: Date())
         }
         
@@ -40,7 +42,7 @@ class AppContainer {
                 let data = makeMockUserProfile()
                 return MockUserProfileDataStore(data: data)
             #else
-                return RealmUserProfileDataStore()
+                return FirebaseUserProfileDataStore()
             #endif
         }
         
@@ -54,14 +56,13 @@ class AppContainer {
             [
                 {
                     "id": "puzzle1",
-                    "name": "merchant.png",
+                    "name": "field-of-flowers.jpg",
                     "url": "http://example.com/sunset-puzzle",
                     "categories": [
                         "all",
                         "easy"
                     ],
-                    "isPremium": false,
-                    "difficulty": "easy"
+                    "isPremium": false
                 },
                 {
                     "id": "puzzle2",
@@ -72,8 +73,7 @@ class AppContainer {
                         "hard",
                         "premium"
                     ],
-                    "isPremium": true,
-                    "difficulty": "hard"
+                    "isPremium": true
                 },
                 {
                     "id": "puzzle3",
@@ -83,8 +83,7 @@ class AppContainer {
                         "all",
                         "easy"
                     ],
-                    "isPremium": false,
-                    "difficulty": "easy"
+                    "isPremium": false
                 },
                 {
                     "id": "puzzle4",
@@ -95,8 +94,7 @@ class AppContainer {
                         "hard",
                         "premium"
                     ],
-                    "isPremium": true,
-                    "difficulty": "hard"
+                    "isPremium": true
                 },
                 {
                     "id": "puzzle5",
@@ -106,8 +104,7 @@ class AppContainer {
                         "all",
                         "easy"
                     ],
-                    "isPremium": false,
-                    "difficulty": "easy"
+                    "isPremium": false
                 },
                 {
                     "id": "puzzle6",
@@ -118,8 +115,7 @@ class AppContainer {
                         "hard",
                         "premium"
                     ],
-                    "isPremium": true,
-                    "difficulty": "hard"
+                    "isPremium": true
                 },
                 {
                     "id": "puzzle7",
@@ -129,8 +125,7 @@ class AppContainer {
                         "all",
                         "easy"
                     ],
-                    "isPremium": false,
-                    "difficulty": "easy"
+                    "isPremium": false
                 },
                 {
                     "id": "puzzle8",
@@ -141,8 +136,7 @@ class AppContainer {
                         "hard",
                         "premium"
                     ],
-                    "isPremium": true,
-                    "difficulty": "hard"
+                    "isPremium": true
                 }
             ]
             """
