@@ -13,7 +13,7 @@ extension UIColor {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         
         if hex.count < 6 {
-            self.init(red: 0, green: 0, blue: 0, alpha: 1)  // Return black if invalid hex
+            self.init(red: 0, green: 0, blue: 0, alpha: 1)
             return
         }
         
