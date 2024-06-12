@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class CirclePuzzleUITestsLaunchTests: XCTestCase {
+final class CalmPuzzleUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

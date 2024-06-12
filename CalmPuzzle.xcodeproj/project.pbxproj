@@ -10,18 +10,15 @@
 		180192C22BF6FABD002E6893 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192C12BF6FABD002E6893 /* AppDelegate.swift */; };
 		180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180192CA2BF6FABE002E6893 /* Assets.xcassets */; };
 		180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */; };
-		180192D92BF6FABF002E6893 /* CirclePuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192D82BF6FABF002E6893 /* CirclePuzzleTests.swift */; };
-		180192E32BF6FABF002E6893 /* CirclePuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */; };
-		180192E52BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */; };
+		180192D92BF6FABF002E6893 /* CalmPuzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192D82BF6FABF002E6893 /* CalmPuzzleTests.swift */; };
+		180192E32BF6FABF002E6893 /* CalmPuzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E22BF6FABF002E6893 /* CalmPuzzleUITests.swift */; };
+		180192E52BF6FABF002E6893 /* CalmPuzzleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180192E42BF6FABF002E6893 /* CalmPuzzleUITestsLaunchTests.swift */; };
 		185E24602C1225EA009C7C68 /* SettingsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E245F2C1225EA009C7C68 /* SettingsSection.swift */; };
 		185E24622C122E6F009C7C68 /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24612C122E6F009C7C68 /* DifficultyViewController.swift */; };
 		185E24642C123196009C7C68 /* DifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24632C123196009C7C68 /* DifficultyViewModel.swift */; };
 		185E24662C1231B7009C7C68 /* DifficultyRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24652C1231B7009C7C68 /* DifficultyRootView.swift */; };
 		185E24692C1384C4009C7C68 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24682C1384C4009C7C68 /* Difficulty.swift */; };
 		185E246B2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */; };
-		185E246D2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */; };
-		185E246E2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */; };
-		185E246F2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */; };
 		185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */; };
 		185E3FD82BFFBEB300E5E398 /* GameSessionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */; };
 		185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */; };
@@ -110,23 +107,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		180192BE2BF6FABD002E6893 /* CirclePuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirclePuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		180192BE2BF6FABD002E6893 /* CalmPuzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalmPuzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180192C12BF6FABD002E6893 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		180192CA2BF6FABE002E6893 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180192CD2BF6FABE002E6893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180192CF2BF6FABE002E6893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		180192D42BF6FABF002E6893 /* CirclePuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclePuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		180192D82BF6FABF002E6893 /* CirclePuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleTests.swift; sourceTree = "<group>"; };
-		180192DE2BF6FABF002E6893 /* CirclePuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CirclePuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleUITests.swift; sourceTree = "<group>"; };
-		180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePuzzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		180192D42BF6FABF002E6893 /* CalmPuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalmPuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180192D82BF6FABF002E6893 /* CalmPuzzleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmPuzzleTests.swift; sourceTree = "<group>"; };
+		180192DE2BF6FABF002E6893 /* CalmPuzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalmPuzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		180192E22BF6FABF002E6893 /* CalmPuzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmPuzzleUITests.swift; sourceTree = "<group>"; };
+		180192E42BF6FABF002E6893 /* CalmPuzzleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmPuzzleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		185E245F2C1225EA009C7C68 /* SettingsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSection.swift; sourceTree = "<group>"; };
 		185E24612C122E6F009C7C68 /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		185E24632C123196009C7C68 /* DifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewModel.swift; sourceTree = "<group>"; };
 		185E24652C1231B7009C7C68 /* DifficultyRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyRootView.swift; sourceTree = "<group>"; };
 		185E24682C1384C4009C7C68 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePuzzleDataStore.swift; sourceTree = "<group>"; };
-		185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
 		185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionRootView.swift; sourceTree = "<group>"; };
 		185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewController.swift; sourceTree = "<group>"; };
@@ -225,9 +221,9 @@
 		180192B52BF6FABD002E6893 = {
 			isa = PBXGroup;
 			children = (
-				180192C02BF6FABD002E6893 /* CirclePuzzle */,
-				180192D72BF6FABF002E6893 /* CirclePuzzleTests */,
-				180192E12BF6FABF002E6893 /* CirclePuzzleUITests */,
+				180192C02BF6FABD002E6893 /* CalmPuzzle */,
+				180192D72BF6FABF002E6893 /* CalmPuzzleTests */,
+				180192E12BF6FABF002E6893 /* CalmPuzzleUITests */,
 				180192BF2BF6FABD002E6893 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -235,14 +231,14 @@
 		180192BF2BF6FABD002E6893 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				180192BE2BF6FABD002E6893 /* CirclePuzzle.app */,
-				180192D42BF6FABF002E6893 /* CirclePuzzleTests.xctest */,
-				180192DE2BF6FABF002E6893 /* CirclePuzzleUITests.xctest */,
+				180192BE2BF6FABD002E6893 /* CalmPuzzle.app */,
+				180192D42BF6FABF002E6893 /* CalmPuzzleTests.xctest */,
+				180192DE2BF6FABF002E6893 /* CalmPuzzleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		180192C02BF6FABD002E6893 /* CirclePuzzle */ = {
+		180192C02BF6FABD002E6893 /* CalmPuzzle */ = {
 			isa = PBXGroup;
 			children = (
 				180192C12BF6FABD002E6893 /* AppDelegate.swift */,
@@ -256,26 +252,25 @@
 				180192CA2BF6FABE002E6893 /* Assets.xcassets */,
 				180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */,
 				180192CF2BF6FABE002E6893 /* Info.plist */,
-				185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */,
 			);
-			path = CirclePuzzle;
+			path = CalmPuzzle;
 			sourceTree = "<group>";
 		};
-		180192D72BF6FABF002E6893 /* CirclePuzzleTests */ = {
+		180192D72BF6FABF002E6893 /* CalmPuzzleTests */ = {
 			isa = PBXGroup;
 			children = (
-				180192D82BF6FABF002E6893 /* CirclePuzzleTests.swift */,
+				180192D82BF6FABF002E6893 /* CalmPuzzleTests.swift */,
 			);
-			path = CirclePuzzleTests;
+			path = CalmPuzzleTests;
 			sourceTree = "<group>";
 		};
-		180192E12BF6FABF002E6893 /* CirclePuzzleUITests */ = {
+		180192E12BF6FABF002E6893 /* CalmPuzzleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				180192E22BF6FABF002E6893 /* CirclePuzzleUITests.swift */,
-				180192E42BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift */,
+				180192E22BF6FABF002E6893 /* CalmPuzzleUITests.swift */,
+				180192E42BF6FABF002E6893 /* CalmPuzzleUITestsLaunchTests.swift */,
 			);
-			path = CirclePuzzleUITests;
+			path = CalmPuzzleUITests;
 			sourceTree = "<group>";
 		};
 		185E24672C12324C009C7C68 /* Difficulty */ = {
@@ -500,9 +495,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		180192BD2BF6FABD002E6893 /* CirclePuzzle */ = {
+		180192BD2BF6FABD002E6893 /* CalmPuzzle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 180192E82BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CirclePuzzle" */;
+			buildConfigurationList = 180192E82BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CalmPuzzle" */;
 			buildPhases = (
 				180192BA2BF6FABD002E6893 /* Sources */,
 				180192BB2BF6FABD002E6893 /* Frameworks */,
@@ -512,14 +507,14 @@
 			);
 			dependencies = (
 			);
-			name = CirclePuzzle;
+			name = CalmPuzzle;
 			productName = CirclePuzzle;
-			productReference = 180192BE2BF6FABD002E6893 /* CirclePuzzle.app */;
+			productReference = 180192BE2BF6FABD002E6893 /* CalmPuzzle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		180192D32BF6FABF002E6893 /* CirclePuzzleTests */ = {
+		180192D32BF6FABF002E6893 /* CalmPuzzleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 180192EB2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CirclePuzzleTests" */;
+			buildConfigurationList = 180192EB2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CalmPuzzleTests" */;
 			buildPhases = (
 				180192D02BF6FABF002E6893 /* Sources */,
 				180192D12BF6FABF002E6893 /* Frameworks */,
@@ -530,14 +525,14 @@
 			dependencies = (
 				180192D62BF6FABF002E6893 /* PBXTargetDependency */,
 			);
-			name = CirclePuzzleTests;
+			name = CalmPuzzleTests;
 			productName = CirclePuzzleTests;
-			productReference = 180192D42BF6FABF002E6893 /* CirclePuzzleTests.xctest */;
+			productReference = 180192D42BF6FABF002E6893 /* CalmPuzzleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		180192DD2BF6FABF002E6893 /* CirclePuzzleUITests */ = {
+		180192DD2BF6FABF002E6893 /* CalmPuzzleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 180192EE2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CirclePuzzleUITests" */;
+			buildConfigurationList = 180192EE2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CalmPuzzleUITests" */;
 			buildPhases = (
 				180192DA2BF6FABF002E6893 /* Sources */,
 				180192DB2BF6FABF002E6893 /* Frameworks */,
@@ -548,9 +543,9 @@
 			dependencies = (
 				180192E02BF6FABF002E6893 /* PBXTargetDependency */,
 			);
-			name = CirclePuzzleUITests;
+			name = CalmPuzzleUITests;
 			productName = CirclePuzzleUITests;
-			productReference = 180192DE2BF6FABF002E6893 /* CirclePuzzleUITests.xctest */;
+			productReference = 180192DE2BF6FABF002E6893 /* CalmPuzzleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -576,7 +571,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 180192B92BF6FABD002E6893 /* Build configuration list for PBXProject "CirclePuzzle" */;
+			buildConfigurationList = 180192B92BF6FABD002E6893 /* Build configuration list for PBXProject "CalmPuzzle" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -589,9 +584,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				180192BD2BF6FABD002E6893 /* CirclePuzzle */,
-				180192D32BF6FABF002E6893 /* CirclePuzzleTests */,
-				180192DD2BF6FABF002E6893 /* CirclePuzzleUITests */,
+				180192BD2BF6FABD002E6893 /* CalmPuzzle */,
+				180192D32BF6FABF002E6893 /* CalmPuzzleTests */,
+				180192DD2BF6FABF002E6893 /* CalmPuzzleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -603,7 +598,6 @@
 			files = (
 				185E3FE22C08CBC000E5E398 /* field-of-flowers.jpg in Resources */,
 				1863641B2BFFB78E00A330AF /* merchant.png in Resources */,
-				185E246D2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */,
 				180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */,
 				180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */,
 			);
@@ -613,7 +607,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185E246E2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,7 +614,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				185E246F2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,7 +704,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180192D92BF6FABF002E6893 /* CirclePuzzleTests.swift in Sources */,
+				180192D92BF6FABF002E6893 /* CalmPuzzleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,8 +712,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180192E52BF6FABF002E6893 /* CirclePuzzleUITestsLaunchTests.swift in Sources */,
-				180192E32BF6FABF002E6893 /* CirclePuzzleUITests.swift in Sources */,
+				180192E52BF6FABF002E6893 /* CalmPuzzleUITestsLaunchTests.swift in Sources */,
+				180192E32BF6FABF002E6893 /* CalmPuzzleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,12 +722,12 @@
 /* Begin PBXTargetDependency section */
 		180192D62BF6FABF002E6893 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 180192BD2BF6FABD002E6893 /* CirclePuzzle */;
+			target = 180192BD2BF6FABD002E6893 /* CalmPuzzle */;
 			targetProxy = 180192D52BF6FABF002E6893 /* PBXContainerItemProxy */;
 		};
 		180192E02BF6FABF002E6893 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 180192BD2BF6FABD002E6893 /* CirclePuzzle */;
+			target = 180192BD2BF6FABD002E6893 /* CalmPuzzle */;
 			targetProxy = 180192DF2BF6FABF002E6893 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -881,7 +873,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E9P6GGP6YR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CirclePuzzle/Info.plist;
+				INFOPLIST_FILE = CalmPuzzle/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Calm Puzzle";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -912,7 +905,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E9P6GGP6YR;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CirclePuzzle/Info.plist;
+				INFOPLIST_FILE = CalmPuzzle/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Calm Puzzle";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.puzzle-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -949,7 +943,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CirclePuzzle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CirclePuzzle";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalmPuzzle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalmPuzzle";
 			};
 			name = Debug;
 		};
@@ -969,7 +963,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CirclePuzzle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CirclePuzzle";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CalmPuzzle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CalmPuzzle";
 			};
 			name = Release;
 		};
@@ -1012,7 +1006,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		180192B92BF6FABD002E6893 /* Build configuration list for PBXProject "CirclePuzzle" */ = {
+		180192B92BF6FABD002E6893 /* Build configuration list for PBXProject "CalmPuzzle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				180192E62BF6FABF002E6893 /* Debug */,
@@ -1021,7 +1015,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		180192E82BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CirclePuzzle" */ = {
+		180192E82BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CalmPuzzle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				180192E92BF6FABF002E6893 /* Debug */,
@@ -1030,7 +1024,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		180192EB2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CirclePuzzleTests" */ = {
+		180192EB2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CalmPuzzleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				180192EC2BF6FABF002E6893 /* Debug */,
@@ -1039,7 +1033,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		180192EE2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CirclePuzzleUITests" */ = {
+		180192EE2BF6FABF002E6893 /* Build configuration list for PBXNativeTarget "CalmPuzzleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				180192EF2BF6FABF002E6893 /* Debug */,
