@@ -7,6 +7,20 @@
 
 import Foundation
 
+/*
+ Firestore Format:
+ 
+ Collection: Puzzles
+    Document ID: `id` (String)
+    Document: Puzzle
+        `id`: String
+        `name`: String
+        `url`: String
+        `categories`: [String]
+        `isPremium`: Boolean
+        `premiumPackageID`: String (nullable)
+ */
+
 struct Puzzle: Codable {
     
     let id: String

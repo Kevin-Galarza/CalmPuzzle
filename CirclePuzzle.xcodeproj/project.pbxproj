@@ -19,6 +19,9 @@
 		185E24662C1231B7009C7C68 /* DifficultyRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24652C1231B7009C7C68 /* DifficultyRootView.swift */; };
 		185E24692C1384C4009C7C68 /* Difficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E24682C1384C4009C7C68 /* Difficulty.swift */; };
 		185E246B2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */; };
+		185E246D2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */; };
+		185E246E2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */; };
+		185E246F2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */; };
 		185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */; };
 		185E3FD82BFFBEB300E5E398 /* GameSessionRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */; };
 		185E3FDA2BFFBF1D00E5E398 /* GameSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */; };
@@ -123,6 +126,7 @@
 		185E24652C1231B7009C7C68 /* DifficultyRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyRootView.swift; sourceTree = "<group>"; };
 		185E24682C1384C4009C7C68 /* Difficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulty.swift; sourceTree = "<group>"; };
 		185E246A2C13B8F7009C7C68 /* FirebasePuzzleDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePuzzleDataStore.swift; sourceTree = "<group>"; };
+		185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		185E3FD52BFFBEAB00E5E398 /* GameSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewModel.swift; sourceTree = "<group>"; };
 		185E3FD72BFFBEB300E5E398 /* GameSessionRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionRootView.swift; sourceTree = "<group>"; };
 		185E3FD92BFFBF1D00E5E398 /* GameSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSessionViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +256,7 @@
 				180192CA2BF6FABE002E6893 /* Assets.xcassets */,
 				180192CC2BF6FABE002E6893 /* LaunchScreen.storyboard */,
 				180192CF2BF6FABE002E6893 /* Info.plist */,
+				185E246C2C1A1753009C7C68 /* GoogleService-Info.plist */,
 			);
 			path = CirclePuzzle;
 			sourceTree = "<group>";
@@ -598,6 +603,7 @@
 			files = (
 				185E3FE22C08CBC000E5E398 /* field-of-flowers.jpg in Resources */,
 				1863641B2BFFB78E00A330AF /* merchant.png in Resources */,
+				185E246D2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */,
 				180192CE2BF6FABE002E6893 /* LaunchScreen.storyboard in Resources */,
 				180192CB2BF6FABE002E6893 /* Assets.xcassets in Resources */,
 			);
@@ -607,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185E246E2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +621,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185E246F2C1A1753009C7C68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -868,6 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E9P6GGP6YR;
@@ -884,8 +893,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.galarza.CirclePuzzle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galarza.CalmPuzzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -897,6 +907,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = E9P6GGP6YR;
@@ -913,8 +924,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.galarza.CirclePuzzle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.galarza.CalmPuzzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
