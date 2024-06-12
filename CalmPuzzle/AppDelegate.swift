@@ -6,19 +6,23 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  let injectionContainer = AppContainer()
-  var window: UIWindow?
+    let injectionContainer = AppContainer()
+    var window: UIWindow?
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
-    let mainVC = injectionContainer.makeMainViewController()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]?) -> Bool {
+      
+        FirebaseApp.configure()
 
-    window = UIWindow(frame: UIScreen.main.bounds)
-    window?.makeKeyAndVisible()
-    window?.rootViewController = mainVC
+        let mainVC = injectionContainer.makeMainViewController()
 
-    return true
-  }
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = mainVC
+
+        return true
+    }
 }
