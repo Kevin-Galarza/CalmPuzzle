@@ -106,6 +106,8 @@
 		18FEC92F2C1A43B3002D9649 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 18FEC92E2C1A43B3002D9649 /* FirebaseRemoteConfig */; };
 		18FEC9312C1A43B3002D9649 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18FEC9302C1A43B3002D9649 /* FirebaseRemoteConfigSwift */; };
 		18FEC9332C1A43B3002D9649 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 18FEC9322C1A43B3002D9649 /* FirebaseStorage */; };
+		18FEC9352C1B652E002D9649 /* Authenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FEC9342C1B652E002D9649 /* Authenticator.swift */; };
+		18FEC9372C1C9E4B002D9649 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FEC9362C1C9E4B002D9649 /* NetworkReachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +213,8 @@
 		186364182BFFB41A00A330AF /* PuzzleTileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleTileCell.swift; sourceTree = "<group>"; };
 		1863641A2BFFB78D00A330AF /* merchant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = merchant.png; sourceTree = "<group>"; };
 		18681C472C120B0400CA5BE8 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		18FEC9342C1B652E002D9649 /* Authenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticator.swift; sourceTree = "<group>"; };
+		18FEC9362C1C9E4B002D9649 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +286,7 @@
 				186363AB2BFCF51B00A330AF /* MainViewModel.swift */,
 				186363E32BFD539400A330AF /* MainView.swift */,
 				186363AD2BFD070800A330AF /* MainViewController.swift */,
+				18FEC9362C1C9E4B002D9649 /* NetworkReachability.swift */,
 				186363E72BFE2DD800A330AF /* UIKit */,
 				186363CB2BFD454C00A330AF /* UI */,
 				186363CA2BFD452300A330AF /* Data */,
@@ -365,6 +370,7 @@
 				186363AF2BFD0A5D00A330AF /* LaunchViewController.swift */,
 				186363C32BFD449500A330AF /* LaunchRootView.swift */,
 				186363B12BFD0A6600A330AF /* LaunchViewModel.swift */,
+				18FEC9342C1B652E002D9649 /* Authenticator.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -699,6 +705,7 @@
 				186363B62BFD0B0500A330AF /* OnboardingContainer.swift in Sources */,
 				186363DD2BFD49CB00A330AF /* ErrorMessagePresentation.swift in Sources */,
 				186363D72BFD48A300A330AF /* Secret.swift in Sources */,
+				18FEC9372C1C9E4B002D9649 /* NetworkReachability.swift in Sources */,
 				186363D32BFD481200A330AF /* ErrorMessage.swift in Sources */,
 				185E3FE82C0E39FB00E5E398 /* CustomHeaderView.swift in Sources */,
 				186363F92BFE3CC300A330AF /* DailyPuzzleRootView.swift in Sources */,
@@ -718,6 +725,7 @@
 				185E24642C123196009C7C68 /* DifficultyViewModel.swift in Sources */,
 				186363A82BFCEBA900A330AF /* MockUserProfileDataStore.swift in Sources */,
 				185E3FD62BFFBEAB00E5E398 /* GameSessionViewModel.swift in Sources */,
+				18FEC9352C1B652E002D9649 /* Authenticator.swift in Sources */,
 				185E3FDE2C00EF2B00E5E398 /* TileCell.swift in Sources */,
 				186363FF2BFE3CDF00A330AF /* ShopRootView.swift in Sources */,
 				186363F12BFE3C8F00A330AF /* BrowseViewController.swift in Sources */,

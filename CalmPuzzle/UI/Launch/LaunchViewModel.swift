@@ -7,6 +7,8 @@
 
 import Foundation
 import Combine
+import FirebaseAuth
+import GameKit
 
 class LaunchViewModel {
 
@@ -21,7 +23,7 @@ class LaunchViewModel {
     let errorPresentation = PassthroughSubject<ErrorPresentation?, Never>()
     private var subscriptions = Set<AnyCancellable>()
 
-    public init(userProfileRepository: UserProfileRepository,
+    init(userProfileRepository: UserProfileRepository,
               notSignedInResponder: NotSignedInResponder,
               signedInResponder: SignedInResponder) {
         self.userProfileRepository = userProfileRepository
@@ -29,7 +31,7 @@ class LaunchViewModel {
         self.signedInResponder = signedInResponder
     }
 
-    public func loadUserProfile() {
+    func loadUserProfile() {
         userProfileRepository.fetch()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in

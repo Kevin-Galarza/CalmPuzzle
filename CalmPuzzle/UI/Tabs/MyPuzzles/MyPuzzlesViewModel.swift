@@ -64,12 +64,9 @@ class MyPuzzlesViewModel: BaseViewModel {
         
         let ids: Set<PuzzleID> = {
             if self.selectedSegment == .inProgress {
-                if let keys = userProfile.appProgress.ongoingPuzzles?.keys {
-                    return Set<PuzzleID>(keys)
-                }
-                return Set<PuzzleID>()
+                return Set(userProfile.ongoingPuzzles?.map({$0.id}) ?? [])
             } else {
-                return userProfile.appProgress.completedPuzzles ?? Set()
+                return userProfile.completedPuzzles ?? Set()
             }
         }()
         

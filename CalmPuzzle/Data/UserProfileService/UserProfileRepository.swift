@@ -26,8 +26,8 @@ class UserProfileRepository {
             .eraseToAnyPublisher()
     }
     
-    func fetch() -> AnyPublisher<UserProfile?, Error> {
-        dataStore.fetch()
+    func fetch(uid: String) -> AnyPublisher<UserProfile?, Error> {
+        dataStore.fetch(uid: uid)
             .handleEvents(receiveOutput: { [weak self] profile in
                 self?.currentUserProfile.send(profile)
             })
@@ -41,25 +41,8 @@ class UserProfileRepository {
             })
             .eraseToAnyPublisher()
     }
-    
-    func updateProgress(completedPuzzle: PuzzleID) -> AnyPublisher<UserProfile?, Error> {
-        dataStore.updateProgress(completedPuzzle: completedPuzzle)
-            .handleEvents(receiveOutput: { [weak self] profile in
-                self?.currentUserProfile.send(profile)
-            })
-            .eraseToAnyPublisher()
-    }
-    
-    func updateProgress(ongoingPuzzle: [PuzzleID : [UserProfile.Tile]]) -> AnyPublisher<UserProfile?, Error> {
-        dataStore.updateProgress(ongoingPuzzle: ongoingPuzzle)
-            .handleEvents(receiveOutput: { [weak self] profile in
-                self?.currentUserProfile.send(profile)
-            })
-            .eraseToAnyPublisher()
-    }
 
     func profilePublisher() -> AnyPublisher<UserProfile?, Error> {
         currentUserProfile.eraseToAnyPublisher()
     }
 }
-

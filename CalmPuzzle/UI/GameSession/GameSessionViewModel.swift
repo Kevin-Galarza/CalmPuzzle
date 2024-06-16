@@ -38,13 +38,13 @@ class GameSessionViewModel {
         self.puzzleID = puzzle.id
         
         userProfilePublisher
-            .compactMap { $0 }  // Ensure the UserProfile is not nil
+            .compactMap { $0 }
             .receive(on: DispatchQueue.main)
             .first()
             .sink(receiveCompletion: { completion in
 
             }, receiveValue: { [weak self] userProfile in
-                let progress = userProfile.appProgress.ongoingPuzzles?[puzzle.id]
+                let progress = userProfile.ongoingPuzzles?.first { $0.id == puzzle.id }
                 self?.setGridSize(from: userProfile.difficulty)
                 self?.initializeTiles(from: puzzle, with: progress)
             })
@@ -118,13 +118,13 @@ class GameSessionViewModel {
         }
     }
     
-    private func initializeTiles(from puzzle: Puzzle, with progress: [UserProfile.Tile]?) {
+    private func initializeTiles(from puzzle: Puzzle, with progress: UserProfile.Puzzle?) {
         guard let image = UIImage(named: puzzle.name) else { return }
         let tileImages = extractTileSections(image: image, gridSize: gridSize)
         tiles = tileImages.enumerated().map { (index, image) in
             let id = index
             let correctIndex = index
-            let currentIndex = progress?.first(where: { $0.id == index })?.currentIndex ?? index
+            let currentIndex = progress?.tiles.first(where: { $0.id == index })?.currentIndex ?? index
             return Tile(id: id, image: image, currentIndex: currentIndex, correctIndex: correctIndex)
         }
 
@@ -168,29 +168,51 @@ class GameSessionViewModel {
         return tileImages
     }
     
-    private func createRestoreData() -> [PuzzleID : [UserProfile.Tile]] {
+    private func createRestoreData() -> UserProfile.Puzzle {
         let puzzleState = tiles.map { UserProfile.Tile(id: $0.id, currentIndex: $0.currentIndex, correctIndex: $0.correctIndex) }
-        let record: [PuzzleID : [UserProfile.Tile]] = [self.puzzleID : puzzleState]
+        let record: UserProfile.Puzzle = UserProfile.Puzzle(id: self.puzzleID, tiles: puzzleState)
         return record
     }
     
     private func saveAsOngoing() {
         let restoreData = createRestoreData()
-        userProfileRepository
-            .updateProgress(ongoingPuzzle: restoreData)
+        userProfilePublisher
+            .compactMap { $0 }
             .receive(on: DispatchQueue.main)
             .first()
-            .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+            .sink(receiveCompletion: { completion in }, 
+                  receiveValue: { [weak self] userProfile in
+                guard let strongSelf = self else { return }
+                let updatedProfile = userProfile.updated { profile in
+                    if profile.ongoingPuzzles == nil {
+                        profile.ongoingPuzzles = []
+                    }
+                    profile.ongoingPuzzles?.insert(restoreData)
+                }
+                self?.userProfileRepository.update(userProfile: updatedProfile)
+                    .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+                    .store(in: &strongSelf.subscriptions)
+            })
             .store(in: &subscriptions)
     }
     
     private func saveAsCompleted() {
-        userProfileRepository
-            .updateProgress(completedPuzzle: self.puzzleID)
+        userProfilePublisher
+            .compactMap { $0 }
             .receive(on: DispatchQueue.main)
             .first()
-            .sink(receiveCompletion: { _ in}, receiveValue: { profile in
-//                print("SaveAsCompleted: \(profile)")
+            .sink(receiveCompletion: { completion in },
+                  receiveValue: { [weak self] userProfile in
+                guard let strongSelf = self else { return }
+                let updatedProfile = userProfile.updated { profile in
+                    if profile.completedPuzzles == nil {
+                        profile.completedPuzzles = []
+                    }
+                    profile.completedPuzzles?.insert(strongSelf.puzzleID)
+                }
+                self?.userProfileRepository.update(userProfile: updatedProfile)
+                    .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+                    .store(in: &strongSelf.subscriptions)
             })
             .store(in: &subscriptions)
     }

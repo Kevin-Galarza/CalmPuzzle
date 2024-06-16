@@ -22,11 +22,9 @@ class AppContainer {
         
         func makeMockUserProfile() -> UserProfile {
             let appSettings = UserProfile.AppSettings(musicEnabled: true, soundEffectsEnabled: true, hapticsEnabled: true)
-            let appProgress = UserProfile.AppProgress(completedPuzzles: nil, ongoingPuzzles: nil)
             let deviceInfo = UserProfile.DeviceInfo(deviceModel: "iPhone 15 Pro", osVersion: "17.3.1")
             return UserProfile(uid: UUID().uuidString,
                        appSettings: appSettings,
-                       appProgress: appProgress,
                        deviceInfo: deviceInfo,
                        adsEnabled: true,
                        premiumPackagesUnlocked: nil,
@@ -34,7 +32,9 @@ class AppContainer {
                        coins: 100,
                        credits: 10,
                        difficulty: .medium,
-                       createdTimestamp: Date())
+                       createdTimestamp: Date(),
+                       ongoingPuzzles: nil,
+                       completedPuzzles: nil)
         }
         
         func makeUserProfileDataStore() -> UserProfileDataStore {
